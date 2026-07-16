@@ -1,7 +1,7 @@
 {
   "cafeName": "Teatro Masr Cafe",
   "cafeNameAr": "تياترو مصر كافيه",
-  "tagline": "2026",
+  "tagline": "منذ 2026",
   "taglineAr": "منذ 2026",
   "whatsappNumber": "201126023106",
   "categories": [
@@ -93,24 +93,6 @@
             }
           ],
           "price": null
-        }
-      ]
-    },
-    {
-      "id": "cat-desserts",
-      "name": "Desserts",
-      "nameAr": "حلويات",
-      "products": [
-        {
-          "id": "p6",
-          "name": "Chocolate Cake",
-          "nameAr": "كيكة شوكولاتة",
-          "description": "Rich dark chocolate layer cake",
-          "descriptionAr": "طبقات شوكولاتة داكنة غنية",
-          "image": "",
-          "hasSizes": false,
-          "sizes": [],
-          "price": 85
         }
       ]
     }
