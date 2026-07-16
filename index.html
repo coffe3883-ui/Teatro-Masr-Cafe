@@ -132,7 +132,25 @@
     color: var(--white);
   }
   .admin-brand span { color: var(--red-bright); }
-  .admin-actions { display: flex; gap: 10px; }
+  .admin-actions { display: flex; gap: 10px; align-items: center; }
+
+  .sync-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    padding: 6px 12px;
+    border-radius: 100px;
+    border: 1px solid var(--hairline);
+    color: var(--white-dim);
+    white-space: nowrap;
+    cursor: default;
+    transition: all 0.2s;
+  }
+  .sync-pill.pending { border-color: #c9a227; color: #d8b74a; }
+  .sync-pill.ok { border-color: var(--success); color: #5fce8f; }
+  .sync-pill.error { border-color: var(--red-bright); color: #e08888; cursor: pointer; }
+  .sync-pill.off { border-color: var(--hairline); color: var(--white-dim); }
 
   .admin-body { max-width: 780px; margin: 0 auto; padding: 28px 20px 80px; }
 
@@ -360,6 +378,7 @@
   <div class="admin-topbar">
     <div class="admin-brand">لوحة <span>تحكم</span> المنيو</div>
     <div class="admin-actions">
+      <span class="sync-pill off" id="syncPill" onclick="if(this.classList.contains('error')) saveToGitHub(false);">⚪ اربط GitHub أولاً</span>
       <button class="btn btn-outline btn-sm" onclick="window.open('menu.html','_blank')">👁 معاينة المنيو</button>
       <button class="btn btn-danger btn-sm" onclick="logout()">خروج</button>
     </div>
@@ -368,12 +387,55 @@
   <div class="admin-body">
     <div class="save-banner">
       <div class="save-banner-text">
-        كل تعديل بيتحفظ هنا مؤقتاً. لما تخلّص، اضغط <b>"تنزيل ملف المنيو"</b> وارفعه بدل الملف القديم على GitHub عشان يظهر التحديث للعملاء.
+        أي تعديل (إضافة/تعديل/حذف صنف أو قسم، تغيير بيانات الكافيه) بيتنشر على GitHub <b>تلقائياً</b> بعد ثوانٍ من كل حفظ. تابع حالة النشر من المؤشر أعلى الصفحة.
       </div>
-      <button class="btn btn-solid btn-sm" onclick="downloadData()" style="white-space:nowrap">⬇ تنزيل ملف المنيو</button>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <button class="btn btn-solid btn-sm" id="ghPublishBtn" onclick="saveToGitHub()" style="white-space:nowrap">☁ نشر الآن يدوياً</button>
+        <button class="btn btn-outline btn-sm" onclick="downloadData()" style="white-space:nowrap">⬇ تنزيل نسخة احتياطية</button>
+      </div>
     </div>
 
-    <div class="field-group">
+    <div class="cat-block" id="ghSettingsBlock">
+      <div class="cat-block-head" onclick="toggleCatCollapse(this)">
+        <div class="cat-block-head-title">
+          <span class="caret">▾</span>
+          <b>⚙ إعدادات الربط مع GitHub</b>
+          <span id="ghStatusLabel">غير متصل</span>
+        </div>
+      </div>
+      <div class="cat-block-body">
+        <div class="field-row">
+          <div class="field-group">
+            <label class="field-label">اسم المستخدم / المنظمة (Owner)</label>
+            <input type="text" id="ghOwner" placeholder="مثال: coffe3883-ui">
+          </div>
+          <div class="field-group">
+            <label class="field-label">اسم المستودع (Repository)</label>
+            <input type="text" id="ghRepo" placeholder="مثال: Teatro-Masr-Cafe">
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field-group">
+            <label class="field-label">اسم الفرع (Branch)</label>
+            <input type="text" id="ghBranch" placeholder="main">
+          </div>
+          <div class="field-group">
+            <label class="field-label">اسم الملف المستهدف</label>
+            <input type="text" id="ghPath" placeholder="menu-data.json">
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="field-label">GitHub Personal Access Token</label>
+          <input type="password" id="ghToken" placeholder="الصق الـ Token هنا — يُحفظ في متصفحك فقط ولا يُرفع على GitHub">
+        </div>
+        <button class="btn btn-sm" onclick="saveGhSettings()">حفظ إعدادات الربط</button>
+        <div class="empty-hint" style="text-align:right; padding:10px 0 0;">
+          ⚠️ الـ Token بيتحفظ محلياً في هذا المتصفح فقط (localStorage) ومش بيتبعت لأي حد غيرنا. بعد الحفظ، أي تعديل هينشر تلقائياً — مش محتاج تعمل حاجة تانية.
+        </div>
+      </div>
+    </div>
+
+    <div class="field-group" style="margin-top:20px">
       <label class="field-label">اسم الكافيه (عربي)</label>
       <input type="text" id="cafeNameAr" placeholder="مثال: كافيه الأصالة">
     </div>
@@ -386,6 +448,10 @@
         <label class="field-label">شعار فرعي</label>
         <input type="text" id="taglineAr" placeholder="مثال: منذ ٢٠٢٦">
       </div>
+    </div>
+    <div class="field-group">
+      <label class="field-label">رقم واتساب الكافيه (لاستقبال الطلبات)</label>
+      <input type="text" id="cafeWhatsapp" placeholder="مثال: 201126023106 (بالصيغة الدولية بدون +)">
     </div>
     <button class="btn btn-sm" onclick="saveHeaderInfo()">حفظ بيانات الكافيه</button>
 
@@ -472,6 +538,7 @@ function tryLogin() {
     document.getElementById('adminApp').style.display = 'block';
     sessionStorage.setItem('adminLoggedIn', '1');
     loadData();
+    loadGhSettings();
   } else {
     document.getElementById('loginError').textContent = 'كلمة السر غير صحيحة';
   }
@@ -487,8 +554,161 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('loginScreen').style.display = 'none';
     document.getElementById('adminApp').style.display = 'block';
     loadData();
+    loadGhSettings();
   }
 });
+
+/* =========================================================
+   الربط المباشر مع GitHub (Contents API) — نشر تلقائي بعد كل تعديل
+   ========================================================= */
+let ghAutoSaveTimer = null;
+let isPublishing = false;
+let pendingRepublish = false;
+
+function loadGhSettings() {
+  const saved = JSON.parse(localStorage.getItem('ghSettings') || '{}');
+  document.getElementById('ghOwner').value = saved.owner || 'coffe3883-ui';
+  document.getElementById('ghRepo').value = saved.repo || 'Teatro-Masr-Cafe';
+  document.getElementById('ghBranch').value = saved.branch || 'main';
+  document.getElementById('ghPath').value = saved.path || 'menu-data.json';
+  document.getElementById('ghToken').value = saved.token || '';
+  updateGhStatusLabel(!!saved.token);
+  setSyncPill(saved.token ? 'ok' : 'off', saved.token ? '🟢 متصل — هينشر عند أول تعديل' : '⚪ اربط GitHub أولاً');
+}
+
+function saveGhSettings() {
+  const settings = {
+    owner: document.getElementById('ghOwner').value.trim(),
+    repo: document.getElementById('ghRepo').value.trim(),
+    branch: document.getElementById('ghBranch').value.trim() || 'main',
+    path: document.getElementById('ghPath').value.trim() || 'menu-data.json',
+    token: document.getElementById('ghToken').value.trim()
+  };
+  if (!settings.owner || !settings.repo || !settings.token) {
+    showToast('من فضلك املأ اسم الحساب والمستودع والـ Token');
+    return;
+  }
+  localStorage.setItem('ghSettings', JSON.stringify(settings));
+  updateGhStatusLabel(true);
+  setSyncPill('ok', '🟢 متصل — هينشر عند أول تعديل');
+  showToast('تم حفظ إعدادات الربط مع GitHub');
+}
+
+function updateGhStatusLabel(connected) {
+  const el = document.getElementById('ghStatusLabel');
+  el.textContent = connected ? 'متصل ✅' : 'غير متصل';
+  el.style.color = connected ? '#5fce8f' : '';
+}
+
+function setSyncPill(state, text) {
+  const pill = document.getElementById('syncPill');
+  pill.className = 'sync-pill ' + state;
+  pill.textContent = text;
+}
+
+function hasGhConfig() {
+  const s = JSON.parse(localStorage.getItem('ghSettings') || '{}');
+  return !!(s.owner && s.repo && s.token);
+}
+
+// تحويل نص UTF-8 (عربي) إلى Base64 بأمان
+function utf8ToBase64(str) {
+  return btoa(unescape(encodeURIComponent(str)));
+}
+
+// بيتنادى تلقائياً من persist() بعد أي تعديل — بيأجّل النشر ثانيتين
+// عشان لو حصلت تعديلات متتالية سريعة، يبعتها دفعة واحدة مش نداء لكل حرف
+function scheduleAutoPublish() {
+  if (!hasGhConfig()) {
+    setSyncPill('off', '⚪ اربط GitHub أولاً');
+    return;
+  }
+  setSyncPill('pending', '🟡 هيتم الحفظ خلال ثوانٍ...');
+  clearTimeout(ghAutoSaveTimer);
+  ghAutoSaveTimer = setTimeout(() => saveToGitHub(true), 1800);
+}
+
+async function saveToGitHub(silent) {
+  if (!hasGhConfig()) {
+    if (!silent) showToast('اضبط إعدادات الربط مع GitHub أولاً (تحت زرار النشر)');
+    setSyncPill('off', '⚪ اربط GitHub أولاً');
+    return;
+  }
+
+  // لو فيه نشر شغال حالياً، سجّل إن فيه تعديل جديد وسيبه يتنشر تاني أول ما يخلص
+  // (بيمنع تعارض الـ SHA بين طلبين بيحصلوا في نفس الوقت)
+  if (isPublishing) {
+    pendingRepublish = true;
+    return;
+  }
+
+  clearTimeout(ghAutoSaveTimer);
+  isPublishing = true;
+
+  const settings = JSON.parse(localStorage.getItem('ghSettings') || '{}');
+  const path = settings.path || 'menu-data.json';
+  const apiUrl = `https://api.github.com/repos/${settings.owner}/${settings.repo}/contents/${path}`;
+  const btn = document.getElementById('ghPublishBtn');
+  const originalText = btn.textContent;
+  if (!silent) { btn.disabled = true; btn.textContent = '⏳ جاري النشر...'; }
+  setSyncPill('pending', '🟡 جاري النشر على GitHub...');
+
+  try {
+    // 1) نجيب الـ SHA الحالي للملف (لازم عشان GitHub يوافق على التحديث)
+    let sha = undefined;
+    const getRes = await fetch(`${apiUrl}?ref=${encodeURIComponent(settings.branch)}`, {
+      headers: {
+        Authorization: `token ${settings.token}`,
+        Accept: 'application/vnd.github+json'
+      }
+    });
+    if (getRes.ok) {
+      const getData = await getRes.json();
+      sha = getData.sha;
+    } else if (getRes.status !== 404) {
+      const errData = await getRes.json().catch(() => ({}));
+      throw new Error(errData.message || `فشل قراءة الملف الحالي (${getRes.status})`);
+    }
+
+    // 2) ننشر النسخة الجديدة
+    const body = {
+      message: 'تحديث المنيو من لوحة التحكم — ' + new Date().toLocaleString('ar-EG'),
+      content: utf8ToBase64(JSON.stringify(menuData, null, 2)),
+      branch: settings.branch
+    };
+    if (sha) body.sha = sha;
+
+    const putRes = await fetch(apiUrl, {
+      method: 'PUT',
+      headers: {
+        Authorization: `token ${settings.token}`,
+        Accept: 'application/vnd.github+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+
+    if (!putRes.ok) {
+      const errData = await putRes.json().catch(() => ({}));
+      throw new Error(errData.message || `فشل النشر (${putRes.status})`);
+    }
+
+    const timeStr = new Date().toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
+    setSyncPill('ok', `🟢 محفوظ على GitHub · ${timeStr}`);
+    if (!silent) showToast('✅ تم النشر على GitHub — التحديث هيظهر للعملاء خلال دقيقة');
+  } catch (err) {
+    console.error(err);
+    setSyncPill('error', '🔴 فشل آخر حفظ — دوس هنا للمحاولة تاني');
+    if (!silent) showToast('❌ فشل النشر: ' + err.message);
+  } finally {
+    if (!silent) { btn.disabled = false; btn.textContent = originalText; }
+    isPublishing = false;
+    if (pendingRepublish) {
+      pendingRepublish = false;
+      saveToGitHub(true);
+    }
+  }
+}
 
 async function loadData() {
   const cached = localStorage.getItem('menuDataDraft');
@@ -502,12 +722,16 @@ async function loadData() {
   renderAll();
 }
 
-function persist() { localStorage.setItem('menuDataDraft', JSON.stringify(menuData)); }
+function persist() {
+  localStorage.setItem('menuDataDraft', JSON.stringify(menuData));
+  scheduleAutoPublish();
+}
 
 function renderAll() {
   document.getElementById('cafeNameAr').value = menuData.cafeNameAr || '';
   document.getElementById('cafeName').value = menuData.cafeName || '';
   document.getElementById('taglineAr').value = menuData.taglineAr || '';
+  document.getElementById('cafeWhatsapp').value = menuData.whatsappNumber || '';
   renderCategories();
 }
 
@@ -516,6 +740,7 @@ function saveHeaderInfo() {
   menuData.cafeName = document.getElementById('cafeName').value;
   menuData.taglineAr = document.getElementById('taglineAr').value;
   menuData.tagline = document.getElementById('taglineAr').value;
+  menuData.whatsappNumber = document.getElementById('cafeWhatsapp').value.trim();
   persist();
   showToast('تم حفظ بيانات الكافيه');
 }
@@ -683,18 +908,53 @@ function addSizeRow(label = '', price = '') {
   editor.appendChild(row);
 }
 
-function handleImageUpload(event) {
+// يضغط الصورة (يقلل الأبعاد والجودة) قبل تحويلها لـ Base64
+// عشان يسرّع تحميل المنيو للعميل ويقلل حجم menu-data.json
+function compressImage(file, maxDimension, quality) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = new Image();
+      img.onload = () => {
+        let { width, height } = img;
+        if (width > height && width > maxDimension) {
+          height = Math.round(height * (maxDimension / width));
+          width = maxDimension;
+        } else if (height >= width && height > maxDimension) {
+          width = Math.round(width * (maxDimension / height));
+          height = maxDimension;
+        }
+        const canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, width, height);
+        resolve(canvas.toDataURL('image/jpeg', quality));
+      };
+      img.onerror = () => reject(new Error('تعذّرت قراءة الصورة'));
+      img.src = e.target.result;
+    };
+    reader.onerror = () => reject(new Error('تعذّرت قراءة الملف'));
+    reader.readAsDataURL(file);
+  });
+}
+
+async function handleImageUpload(event) {
   const file = event.target.files[0];
   if (!file) return;
-  const reader = new FileReader();
-  reader.onload = e => {
-    currentImageData = e.target.result;
+  try {
+    showToast('جاري ضغط الصورة...');
+    // أقصى أبعاد 800px بجودة 72% — توازن جيد بين الوضوح وحجم الملف
+    const compressed = await compressImage(file, 800, 0.72);
+    currentImageData = compressed;
     const zone = document.getElementById('imageUploadZone');
     zone.style.backgroundImage = `url('${currentImageData}')`;
     zone.classList.add('has-image');
     document.getElementById('imageUploadLabel').textContent = 'تغيير الصورة';
-  };
-  reader.readAsDataURL(file);
+    showToast('تم ضغط الصورة وتجهيزها');
+  } catch (err) {
+    showToast('حدث خطأ أثناء معالجة الصورة');
+  }
 }
 
 function saveProduct() {
