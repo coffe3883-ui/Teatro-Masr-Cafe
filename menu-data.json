@@ -19,8 +19,16 @@
           "image": "",
           "hasSizes": true,
           "sizes": [
-            { "label": "Single", "labelAr": "سنجل", "price": 35 },
-            { "label": "Double", "labelAr": "دابل", "price": 45 }
+            {
+              "label": "Single",
+              "labelAr": "سنجل",
+              "price": 35
+            },
+            {
+              "label": "Double",
+              "labelAr": "دابل",
+              "price": 45
+            }
           ],
           "price": null
         },
@@ -44,8 +52,16 @@
           "image": "",
           "hasSizes": true,
           "sizes": [
-            { "label": "Medium", "labelAr": "وسط", "price": 55 },
-            { "label": "Large", "labelAr": "كبير", "price": 65 }
+            {
+              "label": "Medium",
+              "labelAr": "وسط",
+              "price": 55
+            },
+            {
+              "label": "Large",
+              "labelAr": "كبير",
+              "price": 65
+            }
           ],
           "price": null
         }
@@ -65,21 +81,18 @@
           "image": "",
           "hasSizes": true,
           "sizes": [
-            { "label": "Medium", "labelAr": "وسط", "price": 60 },
-            { "label": "Large", "labelAr": "كبير", "price": 72 }
+            {
+              "label": "Medium",
+              "labelAr": "وسط",
+              "price": 60
+            },
+            {
+              "label": "Large",
+              "labelAr": "كبير",
+              "price": 72
+            }
           ],
           "price": null
-        },
-        {
-          "id": "p5",
-          "name": "Lemonade",
-          "nameAr": "ليموناضة",
-          "description": "Fresh mint lemonade",
-          "descriptionAr": "ليمون طازج بالنعناع",
-          "image": "",
-          "hasSizes": false,
-          "sizes": [],
-          "price": 40
         }
       ]
     },
