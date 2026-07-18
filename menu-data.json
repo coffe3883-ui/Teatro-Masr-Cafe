@@ -752,6 +752,375 @@
           "price": 110
         }
       ]
+    },
+    {
+      "id": "cat-1784376111691-59",
+      "name": "Fruit Salad",
+      "nameAr": "فروت سلاط",
+      "products": [
+        {
+          "id": "p1784376111691-60",
+          "name": "FRUIT SALAD",
+          "nameAr": "فروت سلاط",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 55
+        },
+        {
+          "id": "p1784376111691-61",
+          "name": "FRUIT SALAD TIATRO",
+          "nameAr": "فروت سلاط تياترو",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 75
+        }
+      ]
+    },
+    {
+      "id": "cat-1784376111691-62",
+      "name": "Fresh Juice",
+      "nameAr": "عصائر فريش",
+      "products": [
+        {
+          "id": "p1784376111691-63",
+          "name": "MANGO",
+          "nameAr": "مانجو",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 65
+        },
+        {
+          "id": "p1784376111691-64",
+          "name": "STRAWBERRY",
+          "nameAr": "فراولة",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 50
+        },
+        {
+          "id": "p1784376111691-65",
+          "name": "GUAVA",
+          "nameAr": "جوافة",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 50
+        },
+        {
+          "id": "p1784376111691-66",
+          "name": "ORANGE",
+          "nameAr": "برتقال",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 50
+        },
+        {
+          "id": "p1784376111691-67",
+          "name": "TANGERINE",
+          "nameAr": "يوسفي",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 50
+        },
+        {
+          "id": "p1784376111691-68",
+          "name": "DATES WITH MILK",
+          "nameAr": "بلح باللبن",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 55
+        },
+        {
+          "id": "p1784376111691-69",
+          "name": "WATERMELON",
+          "nameAr": "بطيخ",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 55
+        },
+        {
+          "id": "p1784376111691-70",
+          "name": "BANANA",
+          "nameAr": "موز",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 50
+        },
+        {
+          "id": "p1784376111691-71",
+          "name": "KIWI",
+          "nameAr": "كيوي",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 65
+        },
+        {
+          "id": "p1784376111691-72",
+          "name": "LEMON",
+          "nameAr": "ليمون",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 45
+        },
+        {
+          "id": "p1784376111691-73",
+          "name": "MINT LEMON",
+          "nameAr": "ليمون نعناع",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 45
+        },
+        {
+          "id": "p1784376111691-74",
+          "name": "POMEGRANATE",
+          "nameAr": "رمان",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 55
+        },
+        {
+          "id": "p1784376111691-75",
+          "name": "AVOCADO",
+          "nameAr": "أفوكادو",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 70
+        }
+      ]
+    },
+    {
+      "id": "cat-1784376111691-76",
+      "name": "Milk Shake",
+      "nameAr": "ميلك شيك",
+      "products": [
+        {
+          "id": "p1784376111691-77",
+          "name": "VANILLA",
+          "nameAr": "فانيليا",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 60
+        },
+        {
+          "id": "p1784376111691-78",
+          "name": "CHOCOLATE",
+          "nameAr": "شوكليت",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 60
+        },
+        {
+          "id": "p1784376111691-79",
+          "name": "MANGO",
+          "nameAr": "مانجو",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 60
+        },
+        {
+          "id": "p1784376111691-80",
+          "name": "STRAWBERRY",
+          "nameAr": "فراولة",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 60
+        },
+        {
+          "id": "p1784376111691-81",
+          "name": "BLUEBERRY",
+          "nameAr": "بلو بيري",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 60
+        },
+        {
+          "id": "p1784376111691-82",
+          "name": "NUTELLA",
+          "nameAr": "نوتيلا",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 65
+        },
+        {
+          "id": "p1784376111691-83",
+          "name": "CARAMEL",
+          "nameAr": "كراميل",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 60
+        },
+        {
+          "id": "p1784376111691-84",
+          "name": "LOTUS",
+          "nameAr": "لوتس",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 65
+        },
+        {
+          "id": "p1784376111691-85",
+          "name": "BLUEBERRY YOGURT",
+          "nameAr": "أيس كريم توت",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 60
+        },
+        {
+          "id": "p1784376111691-86",
+          "name": "OREO",
+          "nameAr": "أوريو",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 60
+        },
+        {
+          "id": "p1784376111691-87",
+          "name": "KIT KAT",
+          "nameAr": "كيت كات",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 65
+        },
+        {
+          "id": "p1784376111691-88",
+          "name": "MIX CHOCOLATE",
+          "nameAr": "ميكس تشوكليت",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 65
+        }
+      ]
+    },
+    {
+      "id": "cat-1784376111691-89",
+      "name": "Ice Cream",
+      "nameAr": "أيس كريم",
+      "products": [
+        {
+          "id": "p1784376111691-90",
+          "name": "ICE CREAM 2 SCOOPS",
+          "nameAr": "أيس كريم 2 بولة",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 45
+        },
+        {
+          "id": "p1784376111691-91",
+          "name": "ICE CREAM 3 SCOOPS",
+          "nameAr": "أيس كريم 3 بولة",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 55
+        },
+        {
+          "id": "p1784376111691-92",
+          "name": "STRAWBERRY LIFE ICE CREAM",
+          "nameAr": "أيس كريم ستروبري لايف",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 65
+        },
+        {
+          "id": "p1784376111691-93",
+          "name": "ICE CREAM TIATRO",
+          "nameAr": "أيس كريم تياترو",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 70
+        }
+      ]
     }
   ]
 }
