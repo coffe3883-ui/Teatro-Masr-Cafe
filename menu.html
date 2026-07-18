@@ -293,7 +293,7 @@
 <body>
 
 <header class="menu-header">
-  <div class="crest">
+  <div class="crest" id="crestContainer">
     <svg viewBox="0 0 44 44" fill="none">
       <circle cx="22" cy="22" r="20.5" stroke="#8b1a1a" stroke-width="1.5"/>
       <path d="M13 27c0-6 4-9 9-9s9 3 9 9" stroke="#c41e1e" stroke-width="1.4" stroke-linecap="round"/>
@@ -320,7 +320,7 @@
 async function loadMenu() {
   let data;
   try {
-    const res = await fetch('menu-data.json?t=' + Date.now());
+    const res = await fetch('menu-data.json?t=' + Date.now(), { cache: 'no-store' });
     data = await res.json();
   } catch (e) {
     document.getElementById('menuContent').innerHTML = '<div class="empty-state">تعذّر تحميل المنيو حالياً</div>';
@@ -338,6 +338,12 @@ async function loadMenu() {
   document.getElementById('cafeNameEn').textContent = data.cafeName || 'Cafe Menu';
   document.getElementById('tagline').textContent = (data.taglineAr || data.tagline || '').toUpperCase();
   document.title = (data.cafeNameAr || data.cafeName || 'Cafe Menu') + ' | المنيو';
+
+  // لو الكافيه رفع لوجو من لوحة التحكم، نعرضه بدل الأيقونة الرمزية الافتراضية
+  const crestContainer = document.getElementById('crestContainer');
+  if (data.logo) {
+    crestContainer.innerHTML = `<img src="${data.logo}" alt="لوجو الكافيه" style="width:100%; height:100%; object-fit:contain; border-radius:8px;">`;
+  }
 
   const nav = document.getElementById('catNav');
   const content = document.getElementById('menuContent');
