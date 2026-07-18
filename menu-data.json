@@ -4,6 +4,754 @@
   "tagline": "منذ 2026",
   "taglineAr": "منذ 2026",
   "whatsappNumber": "201126023106",
-  "logo": "",
-  "categories": []
+  "categories": [
+    {
+      "id": "cat-hot",
+      "name": "Hot Drinks",
+      "nameAr": "مشروبات ساخنة",
+      "products": [
+        {
+          "id": "p1",
+          "name": "Espresso",
+          "nameAr": "إسبريسو",
+          "description": "Rich and bold single shot",
+          "descriptionAr": "جرعة غنية وقوية",
+          "image": "",
+          "hasSizes": true,
+          "sizes": [
+            {
+              "label": "Single",
+              "labelAr": "سنجل",
+              "price": 35
+            },
+            {
+              "label": "Double",
+              "labelAr": "دابل",
+              "price": 45
+            }
+          ],
+          "price": null
+        },
+        {
+          "id": "p2",
+          "name": "Turkish Coffee",
+          "nameAr": "قهوة تركي",
+          "description": "Traditional slow-brewed coffee",
+          "descriptionAr": "قهوة تقليدية مطبوخة على نار هادئة",
+          "image": "",
+          "hasSizes": false,
+          "sizes": [],
+          "price": 30
+        },
+        {
+          "id": "p3",
+          "name": "Cappuccino",
+          "nameAr": "كابتشينو",
+          "description": "Espresso with steamed milk foam",
+          "descriptionAr": "إسبريسو مع رغوة حليب مبخر",
+          "image": "",
+          "hasSizes": true,
+          "sizes": [
+            {
+              "label": "Medium",
+              "labelAr": "وسط",
+              "price": 55
+            },
+            {
+              "label": "Large",
+              "labelAr": "كبير",
+              "price": 65
+            }
+          ],
+          "price": null
+        },
+        {
+          "id": "p1784375980339-0",
+          "name": "DOUBLE ESPRESSO",
+          "nameAr": "دبل إسبريسو",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 45
+        },
+        {
+          "id": "p1784375980339-1",
+          "name": "TEATRO CAPPUCCINO",
+          "nameAr": "كابتشينو تياترو",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 55
+        },
+        {
+          "id": "p1784375980339-2",
+          "name": "MOCHACHINO",
+          "nameAr": "موكاتشينو",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 55
+        },
+        {
+          "id": "p1784375980339-3",
+          "name": "MOCHA",
+          "nameAr": "موكا",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 50
+        },
+        {
+          "id": "p1784375980339-4",
+          "name": "WHITE MOCHA",
+          "nameAr": "وايت موكا",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 50
+        },
+        {
+          "id": "p1784375980339-5",
+          "name": "LATTE",
+          "nameAr": "لاتيه",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 45
+        },
+        {
+          "id": "p1784375980339-6",
+          "name": "SPANISH LATTE",
+          "nameAr": "سبانش لاتيه",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 50
+        },
+        {
+          "id": "p1784375980339-7",
+          "name": "CINNAMON VANILLA LATTE",
+          "nameAr": "لاتيه فانيليا بالقرفة",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 50
+        },
+        {
+          "id": "p1784375980339-8",
+          "name": "CARAMEL LATTE",
+          "nameAr": "كراميل لاتيه",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 50
+        },
+        {
+          "id": "p1784375980339-9",
+          "name": "AMERICAN COFFEE",
+          "nameAr": "أمريكان كوفي",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 40
+        },
+        {
+          "id": "p1784375980339-10",
+          "name": "NESCAFE",
+          "nameAr": "نسكافيه",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 40
+        },
+        {
+          "id": "p1784375980339-11",
+          "name": "DOUBLE TURKISH COFFEE",
+          "nameAr": "قهوة تركي دبل",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 45
+        },
+        {
+          "id": "p1784375980339-12",
+          "name": "FRENCH COFFEE",
+          "nameAr": "قهوة فرنساوي",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 45
+        },
+        {
+          "id": "p1784375980339-13",
+          "name": "HAZELNUT COFFEE",
+          "nameAr": "قهوة بالبندق",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 50
+        },
+        {
+          "id": "p1784375980339-14",
+          "name": "TEA",
+          "nameAr": "شاي",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 30
+        },
+        {
+          "id": "p1784375980339-15",
+          "name": "TEA WITH MILK",
+          "nameAr": "شاي باللبن",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 40
+        },
+        {
+          "id": "p1784375980339-16",
+          "name": "GREEN TEA WITH MINT",
+          "nameAr": "شاي أخضر بالنعناع",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 30
+        },
+        {
+          "id": "p1784375980339-17",
+          "name": "NATURAL HERBS",
+          "nameAr": "أعشاب طبيعية",
+          "description": "أنيسون، نعناع، زنجبيل، قرفة",
+          "descriptionAr": "أنيسون، نعناع، زنجبيل، قرفة",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 35
+        },
+        {
+          "id": "p1784375980339-18",
+          "name": "ANTI FLU",
+          "nameAr": "أنتي فلو",
+          "description": "برتقال، زنجبيل، أنيسون، ليمون، عسل، نعناع",
+          "descriptionAr": "برتقال، زنجبيل، أنيسون، ليمون، عسل، نعناع",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 50
+        },
+        {
+          "id": "p1784375980339-19",
+          "name": "HOT CHOCOLATE",
+          "nameAr": "هوت شوكولاتة",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 50
+        },
+        {
+          "id": "p1784375980339-20",
+          "name": "HOT CIDER",
+          "nameAr": "هوت سايدر",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 50
+        },
+        {
+          "id": "p1784375980339-21",
+          "name": "SAHLAB",
+          "nameAr": "سحلب",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 45
+        },
+        {
+          "id": "p1784375980339-22",
+          "name": "SAHLAB NUTS",
+          "nameAr": "سحلب بالمكسرات",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 55
+        },
+        {
+          "id": "p1784375980339-23",
+          "name": "SAHLAB FRUITS",
+          "nameAr": "سحلب بالفواكه",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 55
+        },
+        {
+          "id": "p1784375980339-24",
+          "name": "SAHLAB OREO",
+          "nameAr": "سحلب أوريو",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 55
+        }
+      ]
+    },
+    {
+      "id": "cat-cold",
+      "name": "Cold Drinks",
+      "nameAr": "مشروبات باردة",
+      "products": [
+        {
+          "id": "p4",
+          "name": "Iced Latte",
+          "nameAr": "آيس لاتيه",
+          "description": "Chilled espresso with cold milk",
+          "descriptionAr": "إسبريسو مثلج مع حليب بارد",
+          "image": "",
+          "hasSizes": true,
+          "sizes": [
+            {
+              "label": "Medium",
+              "labelAr": "وسط",
+              "price": 60
+            },
+            {
+              "label": "Large",
+              "labelAr": "كبير",
+              "price": 72
+            }
+          ],
+          "price": null
+        }
+      ]
+    },
+    {
+      "id": "cat-1784195563499",
+      "name": "بسيبسيب",
+      "nameAr": "يببسي",
+      "products": [
+        {
+          "id": "p1784375220299",
+          "name": "يسبسبسي",
+          "nameAr": "رسيبليب",
+          "description": "يبللب",
+          "descriptionAr": "يبللب",
+          "image": "",
+          "hasSizes": true,
+          "sizes": [
+            {
+              "label": "1254",
+              "labelAr": "1254",
+              "price": 1534
+            }
+          ],
+          "price": null
+        }
+      ]
+    },
+    {
+      "id": "cat-1784375980339-25",
+      "name": "Frappe",
+      "nameAr": "فرابيه",
+      "products": [
+        {
+          "id": "p1784375980339-26",
+          "name": "Carmel Frappe",
+          "nameAr": "كارميل فرابيه",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 75
+        },
+        {
+          "id": "p1784375980339-27",
+          "name": "Lotus Frappe",
+          "nameAr": "لوتس فرابيه",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 80
+        },
+        {
+          "id": "p1784375980339-28",
+          "name": "Vanilla Frappe",
+          "nameAr": "فانيليا فرابيه",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 70
+        },
+        {
+          "id": "p1784375980339-29",
+          "name": "Chocolate Frappe",
+          "nameAr": "شوكليت فرابيه",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 70
+        },
+        {
+          "id": "p1784375980339-30",
+          "name": "Mocha Frappe",
+          "nameAr": "موكا فرابيه",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 75
+        },
+        {
+          "id": "p1784375980339-31",
+          "name": "Toffee Frappe",
+          "nameAr": "توفي فرابيه",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 70
+        },
+        {
+          "id": "p1784375980339-32",
+          "name": "Snickers Frappe",
+          "nameAr": "سنيكرز فرابيه",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 80
+        },
+        {
+          "id": "p1784375980339-33",
+          "name": "Frappe Cookies",
+          "nameAr": "كوكيز فرابيه",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 75
+        }
+      ]
+    },
+    {
+      "id": "cat-1784375980339-34",
+      "name": "Smoothie",
+      "nameAr": "سموزي",
+      "products": [
+        {
+          "id": "p1784375980339-35",
+          "name": "Passion Mango",
+          "nameAr": "باشون مانجو سموزي",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 75
+        },
+        {
+          "id": "p1784375980339-36",
+          "name": "Blue Banana",
+          "nameAr": "بلو بانانا سموزي",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 75
+        },
+        {
+          "id": "p1784375980339-37",
+          "name": "Lemon Mint",
+          "nameAr": "ليمون بالنعناع سموزي",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 65
+        },
+        {
+          "id": "p1784375980339-38",
+          "name": "Smoothie Strawberry",
+          "nameAr": "فراولة سموزي",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 60
+        },
+        {
+          "id": "p1784375980339-39",
+          "name": "Mix Berry Smoothie",
+          "nameAr": "ميكس بيري سموزي",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 65
+        }
+      ]
+    },
+    {
+      "id": "cat-1784375980339-40",
+      "name": "Soft Drinks",
+      "nameAr": "مشروبات غازية ومياه",
+      "products": [
+        {
+          "id": "p1784375980339-41",
+          "name": "",
+          "nameAr": "بيبسي / سفن اب / ميرندا",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 40
+        },
+        {
+          "id": "p1784375980339-42",
+          "name": "",
+          "nameAr": "فيروز / بيريل",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 40
+        },
+        {
+          "id": "p1784375980339-43",
+          "name": "",
+          "nameAr": "شويبس",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 40
+        },
+        {
+          "id": "p1784375980339-44",
+          "name": "Red Bull",
+          "nameAr": "ريدبل",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 80
+        },
+        {
+          "id": "p1784375980339-45",
+          "name": "Small Water",
+          "nameAr": "مياه صغيرة",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 20
+        },
+        {
+          "id": "p1784375980339-46",
+          "name": "Big Water",
+          "nameAr": "مياه كبيرة",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 35
+        }
+      ]
+    },
+    {
+      "id": "cat-1784375980339-47",
+      "name": "Cocktail",
+      "nameAr": "كوكتيل",
+      "products": [
+        {
+          "id": "p1784375980339-48",
+          "name": "Tiatro Mix",
+          "nameAr": "تياترو ميكس",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 85
+        },
+        {
+          "id": "p1784375980339-49",
+          "name": "Florida",
+          "nameAr": "فلوريدا",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 85
+        },
+        {
+          "id": "p1784375980339-50",
+          "name": "Tiatro Cocktail",
+          "nameAr": "تياترو كوكتيل",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 90
+        },
+        {
+          "id": "p1784375980339-51",
+          "name": "Blue Coconut",
+          "nameAr": "بلو كوكونت",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 85
+        },
+        {
+          "id": "p1784375980339-52",
+          "name": "Strawberry Water Melon",
+          "nameAr": "ستروبري ووتر ميلون",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 80
+        },
+        {
+          "id": "p1784375980339-53",
+          "name": "Tango",
+          "nameAr": "تانجو",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 85
+        },
+        {
+          "id": "p1784375980339-54",
+          "name": "Banana Blueberry",
+          "nameAr": "بانانا بلو بيري",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 85
+        },
+        {
+          "id": "p1784375980339-55",
+          "name": "Strawberry Kiwi",
+          "nameAr": "ستروبري كيوي",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 85
+        },
+        {
+          "id": "p1784375980339-56",
+          "name": "Honey Yogurt",
+          "nameAr": "زبادي عسل",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 60
+        },
+        {
+          "id": "p1784375980339-57",
+          "name": "Fruit Yogurt",
+          "nameAr": "زبادي فواكه",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 70
+        },
+        {
+          "id": "p1784375980339-58",
+          "name": "Avocado Cocktail",
+          "nameAr": "افوكادو كوكتيل",
+          "description": "",
+          "descriptionAr": "",
+          "image": null,
+          "hasSizes": false,
+          "sizes": [],
+          "price": 110
+        }
+      ]
+    }
+  ]
 }
