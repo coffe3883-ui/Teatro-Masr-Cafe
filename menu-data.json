@@ -14,20 +14,20 @@
           "id": "p1",
           "name": "Espresso",
           "nameAr": "إسبريسو",
-          "description": "Rich and bold single shot",
+          "description": "جرعة غنية وقوية",
           "descriptionAr": "جرعة غنية وقوية",
           "image": "",
           "hasSizes": true,
           "sizes": [
             {
-              "label": "Single",
+              "label": "سنجل",
               "labelAr": "سنجل",
-              "price": 35
+              "price": 55
             },
             {
-              "label": "Double",
+              "label": "دابل",
               "labelAr": "دابل",
-              "price": 45
+              "price": 65
             }
           ],
           "price": null
