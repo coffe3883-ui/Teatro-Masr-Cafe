@@ -36,12 +36,12 @@
           "id": "p2",
           "name": "Turkish Coffee",
           "nameAr": "قهوة تركي",
-          "description": "Traditional slow-brewed coffee",
+          "description": "قهوة تقليدية مطبوخة على نار هادئة",
           "descriptionAr": "قهوة تقليدية مطبوخة على نار هادئة",
           "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 30
+          "price": 40
         },
         {
           "id": "p3",
