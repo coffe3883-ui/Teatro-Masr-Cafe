@@ -588,10 +588,10 @@
           "nameAr": "مياه صغيرة",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 20
+          "price": 10
         },
         {
           "id": "p1784375980339-46",
@@ -961,10 +961,10 @@
           "nameAr": "فانيليا",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 60
+          "price": 85
         },
         {
           "id": "p1784376111691-78",
