@@ -1060,10 +1060,10 @@
           "nameAr": "أوريو",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 60
+          "price": 95
         },
         {
           "id": "p1784376111691-87",
@@ -1071,10 +1071,10 @@
           "nameAr": "كيت كات",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 65
+          "price": 70
         },
         {
           "id": "p1784376111691-88",
@@ -1082,10 +1082,10 @@
           "nameAr": "ميكس تشوكليت",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 65
+          "price": 70
         }
       ]
     },
@@ -1100,10 +1100,10 @@
           "nameAr": "أيس كريم 2 بولة",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 45
+          "price": 40
         },
         {
           "id": "p1784376111691-91",
@@ -1133,7 +1133,7 @@
           "nameAr": "أيس كريم تياترو",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
           "price": 70
