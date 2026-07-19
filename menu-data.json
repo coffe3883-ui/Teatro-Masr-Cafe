@@ -1262,6 +1262,17 @@
           "hasSizes": false,
           "sizes": [],
           "price": 100
+        },
+        {
+          "id": "p1784476067110",
+          "name": "",
+          "nameAr": "لاي طبى",
+          "description": "",
+          "descriptionAr": "",
+          "image": "",
+          "hasSizes": false,
+          "sizes": [],
+          "price": 10
         }
       ]
     }
