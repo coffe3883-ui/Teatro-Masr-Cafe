@@ -1103,7 +1103,7 @@
           "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 40
+          "price": 50
         },
         {
           "id": "p1784376111691-91",
@@ -1111,10 +1111,10 @@
           "nameAr": "أيس كريم 3 بولة",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 55
+          "price": 65
         },
         {
           "id": "p1784376111691-92",
@@ -1136,7 +1136,7 @@
           "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 70
+          "price": 80
         }
       ]
     },
@@ -1144,7 +1144,19 @@
       "id": "cat-1784463784052",
       "name": "Soda cocktail",
       "nameAr": "كوكتيل صودا",
-      "products": []
+      "products": [
+        {
+          "id": "p1784475045507",
+          "name": "",
+          "nameAr": "شيرى باينابل",
+          "description": "",
+          "descriptionAr": "",
+          "image": "",
+          "hasSizes": false,
+          "sizes": [],
+          "price": 65
+        }
+      ]
     },
     {
       "id": "cat-1784463836443",
