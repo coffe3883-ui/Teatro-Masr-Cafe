@@ -104,10 +104,10 @@
           "nameAr": "وايت موكا",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 50
+          "price": 75
         },
         {
           "id": "p1784375980339-5",
@@ -115,10 +115,21 @@
           "nameAr": "لاتيه",
           "description": "",
           "descriptionAr": "",
-          "image": null,
-          "hasSizes": false,
-          "sizes": [],
-          "price": 45
+          "image": "",
+          "hasSizes": true,
+          "sizes": [
+            {
+              "label": "Normal",
+              "labelAr": "Normal",
+              "price": 65
+            },
+            {
+              "label": "Extra",
+              "labelAr": "Extra",
+              "price": 75
+            }
+          ],
+          "price": null
         },
         {
           "id": "p1784375980339-6",
