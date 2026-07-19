@@ -409,10 +409,10 @@
           "nameAr": "فانيليا فرابيه",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 70
+          "price": 85
         },
         {
           "id": "p1784375980339-29",
@@ -420,10 +420,10 @@
           "nameAr": "شوكليت فرابيه",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 70
+          "price": 80
         },
         {
           "id": "p1784375980339-30",
@@ -431,10 +431,10 @@
           "nameAr": "موكا فرابيه",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 75
+          "price": 88
         },
         {
           "id": "p1784375980339-31",
