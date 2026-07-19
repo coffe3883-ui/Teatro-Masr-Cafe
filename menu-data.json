@@ -375,25 +375,7 @@
       "id": "cat-1784195563499",
       "name": "بسيبسيب",
       "nameAr": "يببسي",
-      "products": [
-        {
-          "id": "p1784375220299",
-          "name": "يسبسبسي",
-          "nameAr": "رسيبليب",
-          "description": "يبللب",
-          "descriptionAr": "يبللب",
-          "image": "",
-          "hasSizes": true,
-          "sizes": [
-            {
-              "label": "1254",
-              "labelAr": "1254",
-              "price": 1534
-            }
-          ],
-          "price": null
-        }
-      ]
+      "products": []
     },
     {
       "id": "cat-1784375980339-25",
