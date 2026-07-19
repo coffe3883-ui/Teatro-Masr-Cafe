@@ -661,10 +661,10 @@
           "nameAr": "ستروبري ووتر ميلون",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 80
+          "price": 85
         },
         {
           "id": "p1784375980339-53",
@@ -683,10 +683,10 @@
           "nameAr": "بانانا بلو بيري",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 85
+          "price": 80
         },
         {
           "id": "p1784375980339-55",
@@ -694,10 +694,10 @@
           "nameAr": "ستروبري كيوي",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 85
+          "price": 80
         },
         {
           "id": "p1784375980339-56",
