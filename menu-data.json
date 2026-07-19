@@ -1127,6 +1127,18 @@
       "name": "Soda cocktail",
       "nameAr": "كوكتيل صودا",
       "products": []
+    },
+    {
+      "id": "cat-1784463836443",
+      "name": "Sweet tiatro",
+      "nameAr": "حلو تياترو",
+      "products": []
+    },
+    {
+      "id": "cat-1784463870810",
+      "name": "Shisha",
+      "nameAr": "شيشة",
+      "products": []
     }
   ]
 }
