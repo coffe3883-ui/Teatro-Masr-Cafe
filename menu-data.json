@@ -1195,7 +1195,41 @@
       "id": "cat-1784463836443",
       "name": "Sweet tiatro",
       "nameAr": "حلو تياترو",
-      "products": []
+      "products": [
+        {
+          "id": "p1784475147093",
+          "name": "",
+          "nameAr": "مولتن كيك",
+          "description": "",
+          "descriptionAr": "",
+          "image": "",
+          "hasSizes": false,
+          "sizes": [],
+          "price": 85
+        },
+        {
+          "id": "p1784475168434",
+          "name": "",
+          "nameAr": "تشيز كيك",
+          "description": "",
+          "descriptionAr": "",
+          "image": "",
+          "hasSizes": false,
+          "sizes": [],
+          "price": 75
+        },
+        {
+          "id": "p1784475188864",
+          "name": "",
+          "nameAr": "تشيز كيك لوتس",
+          "description": "",
+          "descriptionAr": "",
+          "image": "",
+          "hasSizes": false,
+          "sizes": [],
+          "price": 75
+        }
+      ]
     },
     {
       "id": "cat-1784463870810",
