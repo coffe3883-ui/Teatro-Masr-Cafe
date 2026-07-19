@@ -187,26 +187,26 @@
           "price": 60
         },
         {
-          "id": "p1784375980339-11",
-          "name": "DOUBLE TURKISH COFFEE",
-          "nameAr": "قهوة تركي دبل",
-          "description": "",
-          "descriptionAr": "",
-          "image": null,
-          "hasSizes": false,
-          "sizes": [],
-          "price": 45
-        },
-        {
           "id": "p1784375980339-12",
           "name": "FRENCH COFFEE",
           "nameAr": "قهوة فرنساوي",
           "description": "",
           "descriptionAr": "",
-          "image": null,
-          "hasSizes": false,
-          "sizes": [],
-          "price": 45
+          "image": "",
+          "hasSizes": true,
+          "sizes": [
+            {
+              "label": "سنجل",
+              "labelAr": "سنجل",
+              "price": 55
+            },
+            {
+              "label": "دوبل",
+              "labelAr": "دوبل",
+              "price": 65
+            }
+          ],
+          "price": null
         },
         {
           "id": "p1784375980339-13",
