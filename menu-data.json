@@ -889,21 +889,26 @@
           "nameAr": "ليمون",
           "description": "",
           "descriptionAr": "",
-          "image": null,
-          "hasSizes": false,
-          "sizes": [],
-          "price": 45
-        },
-        {
-          "id": "p1784376111691-73",
-          "name": "MINT LEMON",
-          "nameAr": "ليمون نعناع",
-          "description": "",
-          "descriptionAr": "",
-          "image": null,
-          "hasSizes": false,
-          "sizes": [],
-          "price": 45
+          "image": "",
+          "hasSizes": true,
+          "sizes": [
+            {
+              "label": "سادة",
+              "labelAr": "سادة",
+              "price": 55
+            },
+            {
+              "label": "ليمون نعناع",
+              "labelAr": "ليمون نعناع",
+              "price": 65
+            },
+            {
+              "label": "ليمون فرنساوى",
+              "labelAr": "ليمون فرنساوى",
+              "price": 75
+            }
+          ],
+          "price": null
         },
         {
           "id": "p1784376111691-74",
@@ -911,10 +916,10 @@
           "nameAr": "رمان",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 55
+          "price": 75
         },
         {
           "id": "p1784376111691-75",
