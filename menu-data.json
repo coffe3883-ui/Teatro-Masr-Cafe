@@ -617,10 +617,10 @@
           "nameAr": "تياترو ميكس",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 85
+          "price": 110
         },
         {
           "id": "p1784375980339-49",
@@ -927,10 +927,26 @@
           "nameAr": "أفوكادو",
           "description": "",
           "descriptionAr": "",
-          "image": null,
-          "hasSizes": false,
-          "sizes": [],
-          "price": 70
+          "image": "",
+          "hasSizes": true,
+          "sizes": [
+            {
+              "label": "سادة",
+              "labelAr": "سادة",
+              "price": 100
+            },
+            {
+              "label": "مكسرات",
+              "labelAr": "مكسرات",
+              "price": 110
+            },
+            {
+              "label": "اسبيشيال",
+              "labelAr": "اسبيشيال",
+              "price": 120
+            }
+          ],
+          "price": null
         }
       ]
     },
