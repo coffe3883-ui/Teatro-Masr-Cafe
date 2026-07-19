@@ -387,10 +387,10 @@
           "nameAr": "كارميل فرابيه",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 75
+          "price": 85
         },
         {
           "id": "p1784375980339-27",
@@ -705,10 +705,10 @@
           "nameAr": "زبادي عسل",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 60
+          "price": 65
         },
         {
           "id": "p1784375980339-57",
@@ -716,10 +716,10 @@
           "nameAr": "زبادي فواكه",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 70
+          "price": 85
         },
         {
           "id": "p1784375980339-58",
