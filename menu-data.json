@@ -269,10 +269,10 @@
           "nameAr": "أعشاب طبيعية",
           "description": "أنيسون، نعناع، زنجبيل، قرفة",
           "descriptionAr": "أنيسون، نعناع، زنجبيل، قرفة",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 35
+          "price": 30
         },
         {
           "id": "p1784375980339-18",
@@ -280,10 +280,10 @@
           "nameAr": "أنتي فلو",
           "description": "برتقال، زنجبيل، أنيسون، ليمون، عسل، نعناع",
           "descriptionAr": "برتقال، زنجبيل، أنيسون، ليمون، عسل، نعناع",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 50
+          "price": 65
         },
         {
           "id": "p1784375980339-19",
@@ -291,10 +291,10 @@
           "nameAr": "هوت شوكولاتة",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 50
+          "price": 60
         },
         {
           "id": "p1784375980339-20",
@@ -302,10 +302,10 @@
           "nameAr": "هوت سايدر",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 50
+          "price": 60
         },
         {
           "id": "p1784375980339-21",
