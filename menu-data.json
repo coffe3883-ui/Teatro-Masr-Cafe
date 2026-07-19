@@ -493,10 +493,10 @@
           "nameAr": "بلو بانانا سموزي",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 75
+          "price": 80
         },
         {
           "id": "p1784375980339-37",
@@ -504,10 +504,10 @@
           "nameAr": "ليمون بالنعناع سموزي",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 65
+          "price": 75
         },
         {
           "id": "p1784375980339-38",
@@ -515,10 +515,10 @@
           "nameAr": "فراولة سموزي",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 60
+          "price": 80
         },
         {
           "id": "p1784375980339-39",
@@ -526,10 +526,10 @@
           "nameAr": "ميكس بيري سموزي",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 65
+          "price": 80
         }
       ]
     },
@@ -566,10 +566,10 @@
           "nameAr": "شويبس",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 40
+          "price": 45
         },
         {
           "id": "p1784375980339-44",
