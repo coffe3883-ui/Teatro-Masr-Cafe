@@ -626,8 +626,8 @@
           "id": "p1784375980339-49",
           "name": "Florida",
           "nameAr": "فلوريدا",
-          "description": "",
-          "descriptionAr": "",
+          "description": "مانجو - فراولة- جوافة -سيرب رمان",
+          "descriptionAr": "مانجو - فراولة- جوافة -سيرب رمان",
           "image": "",
           "hasSizes": false,
           "sizes": [],
@@ -650,10 +650,10 @@
           "nameAr": "بلو كوكونت",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 85
+          "price": 80
         },
         {
           "id": "p1784375980339-52",
