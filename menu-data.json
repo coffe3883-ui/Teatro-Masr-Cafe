@@ -137,10 +137,10 @@
           "nameAr": "سبانش لاتيه",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 50
+          "price": 75
         },
         {
           "id": "p1784375980339-7",
@@ -148,10 +148,10 @@
           "nameAr": "لاتيه فانيليا بالقرفة",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 50
+          "price": 75
         },
         {
           "id": "p1784375980339-8",
@@ -159,10 +159,10 @@
           "nameAr": "كراميل لاتيه",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 50
+          "price": 75
         },
         {
           "id": "p1784375980339-9",
@@ -170,10 +170,10 @@
           "nameAr": "أمريكان كوفي",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 40
+          "price": 50
         },
         {
           "id": "p1784375980339-10",
@@ -181,10 +181,10 @@
           "nameAr": "نسكافيه",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 40
+          "price": 60
         },
         {
           "id": "p1784375980339-11",
