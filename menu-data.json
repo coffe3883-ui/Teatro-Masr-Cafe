@@ -796,10 +796,10 @@
           "nameAr": "جوافة",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 50
+          "price": 70
         },
         {
           "id": "p1784376111691-66",
