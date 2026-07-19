@@ -756,10 +756,10 @@
           "nameAr": "فروت سلاط تياترو",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 75
+          "price": 110
         }
       ]
     },
@@ -774,10 +774,10 @@
           "nameAr": "مانجو",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 65
+          "price": 70
         },
         {
           "id": "p1784376111691-64",
@@ -785,10 +785,10 @@
           "nameAr": "فراولة",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 50
+          "price": 65
         },
         {
           "id": "p1784376111691-65",
