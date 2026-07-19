@@ -313,10 +313,31 @@
           "nameAr": "سحلب",
           "description": "",
           "descriptionAr": "",
-          "image": null,
-          "hasSizes": false,
-          "sizes": [],
-          "price": 45
+          "image": "",
+          "hasSizes": true,
+          "sizes": [
+            {
+              "label": "سادة",
+              "labelAr": "سادة",
+              "price": 60
+            },
+            {
+              "label": "مكسرات",
+              "labelAr": "مكسرات",
+              "price": 65
+            },
+            {
+              "label": "فواكة",
+              "labelAr": "فواكة",
+              "price": 75
+            },
+            {
+              "label": "اوريو",
+              "labelAr": "اوريو",
+              "price": 75
+            }
+          ],
+          "price": null
         },
         {
           "id": "p1784375980339-22",
