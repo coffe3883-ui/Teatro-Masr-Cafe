@@ -58,34 +58,23 @@
           "id": "p3",
           "name": "Cappuccino",
           "nameAr": "كابتشينو",
-          "description": "Espresso with steamed milk foam",
+          "description": "إسبريسو مع رغوة حليب مبخر",
           "descriptionAr": "إسبريسو مع رغوة حليب مبخر",
           "image": "",
           "hasSizes": true,
           "sizes": [
             {
-              "label": "Medium",
+              "label": "وسط",
               "labelAr": "وسط",
-              "price": 55
+              "price": 70
             },
             {
-              "label": "Large",
+              "label": "كبير",
               "labelAr": "كبير",
-              "price": 65
+              "price": 80
             }
           ],
           "price": null
-        },
-        {
-          "id": "p1784375980339-0",
-          "name": "DOUBLE ESPRESSO",
-          "nameAr": "دبل إسبريسو",
-          "description": "",
-          "descriptionAr": "",
-          "image": null,
-          "hasSizes": false,
-          "sizes": [],
-          "price": 45
         },
         {
           "id": "p1784375980339-1",
