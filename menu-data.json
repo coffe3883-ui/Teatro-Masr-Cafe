@@ -77,26 +77,15 @@
           "price": null
         },
         {
-          "id": "p1784375980339-1",
-          "name": "TEATRO CAPPUCCINO",
-          "nameAr": "كابتشينو تياترو",
-          "description": "",
-          "descriptionAr": "",
-          "image": null,
-          "hasSizes": false,
-          "sizes": [],
-          "price": 55
-        },
-        {
           "id": "p1784375980339-2",
           "name": "MOCHACHINO",
           "nameAr": "موكاتشينو",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 55
+          "price": 80
         },
         {
           "id": "p1784375980339-3",
@@ -104,10 +93,10 @@
           "nameAr": "موكا",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 50
+          "price": 75
         },
         {
           "id": "p1784375980339-4",
