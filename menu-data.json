@@ -236,10 +236,10 @@
           "nameAr": "شاي",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 30
+          "price": 20
         },
         {
           "id": "p1784375980339-15",
@@ -247,10 +247,10 @@
           "nameAr": "شاي باللبن",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 40
+          "price": 50
         },
         {
           "id": "p1784375980339-16",
@@ -258,7 +258,7 @@
           "nameAr": "شاي أخضر بالنعناع",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
           "price": 30
