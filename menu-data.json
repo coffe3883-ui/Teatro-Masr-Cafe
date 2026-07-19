@@ -214,10 +214,21 @@
           "nameAr": "قهوة بالبندق",
           "description": "",
           "descriptionAr": "",
-          "image": null,
-          "hasSizes": false,
-          "sizes": [],
-          "price": 50
+          "image": "",
+          "hasSizes": true,
+          "sizes": [
+            {
+              "label": "سنجل",
+              "labelAr": "سنجل",
+              "price": 55
+            },
+            {
+              "label": "دوبل",
+              "labelAr": "دوبل",
+              "price": 65
+            }
+          ],
+          "price": null
         },
         {
           "id": "p1784375980339-14",
