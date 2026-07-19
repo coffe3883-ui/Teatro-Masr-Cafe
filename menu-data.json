@@ -338,39 +338,6 @@
             }
           ],
           "price": null
-        },
-        {
-          "id": "p1784375980339-22",
-          "name": "SAHLAB NUTS",
-          "nameAr": "سحلب بالمكسرات",
-          "description": "",
-          "descriptionAr": "",
-          "image": null,
-          "hasSizes": false,
-          "sizes": [],
-          "price": 55
-        },
-        {
-          "id": "p1784375980339-23",
-          "name": "SAHLAB FRUITS",
-          "nameAr": "سحلب بالفواكه",
-          "description": "",
-          "descriptionAr": "",
-          "image": null,
-          "hasSizes": false,
-          "sizes": [],
-          "price": 55
-        },
-        {
-          "id": "p1784375980339-24",
-          "name": "SAHLAB OREO",
-          "nameAr": "سحلب أوريو",
-          "description": "",
-          "descriptionAr": "",
-          "image": null,
-          "hasSizes": false,
-          "sizes": [],
-          "price": 55
         }
       ]
     },
@@ -778,10 +745,10 @@
           "nameAr": "فروت سلاط",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 55
+          "price": 95
         },
         {
           "id": "p1784376111691-61",
