@@ -1016,10 +1016,10 @@
           "nameAr": "نوتيلا",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 65
+          "price": 70
         },
         {
           "id": "p1784376111691-83",
@@ -1027,10 +1027,10 @@
           "nameAr": "كراميل",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 60
+          "price": 85
         },
         {
           "id": "p1784376111691-84",
@@ -1038,21 +1038,21 @@
           "nameAr": "لوتس",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 65
+          "price": 95
         },
         {
           "id": "p1784376111691-85",
           "name": "BLUEBERRY YOGURT",
-          "nameAr": "أيس كريم توت",
+          "nameAr": "زبادى توت",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 60
+          "price": 95
         },
         {
           "id": "p1784376111691-86",
