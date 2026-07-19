@@ -371,12 +371,6 @@
       ]
     },
     {
-      "id": "cat-1784195563499",
-      "name": "بسيبسيب",
-      "nameAr": "يببسي",
-      "products": []
-    },
-    {
       "id": "cat-1784375980339-25",
       "name": "Frappe",
       "nameAr": "فرابيه",
@@ -1250,13 +1244,24 @@
         {
           "id": "p1784475251613",
           "name": "",
-          "nameAr": "شيشة",
+          "nameAr": "شيشة معسل",
           "description": "",
           "descriptionAr": "",
           "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 20
+          "price": 15
+        },
+        {
+          "id": "p1784475298718",
+          "name": "",
+          "nameAr": "شيشة فواكة فاخر",
+          "description": "",
+          "descriptionAr": "",
+          "image": "",
+          "hasSizes": false,
+          "sizes": [],
+          "price": 100
         }
       ]
     }
