@@ -1228,6 +1228,17 @@
           "hasSizes": false,
           "sizes": [],
           "price": 75
+        },
+        {
+          "id": "p1784475209009",
+          "name": "",
+          "nameAr": "براونز",
+          "description": "",
+          "descriptionAr": "",
+          "image": "",
+          "hasSizes": false,
+          "sizes": [],
+          "price": 75
         }
       ]
     },
@@ -1235,7 +1246,19 @@
       "id": "cat-1784463870810",
       "name": "Shisha",
       "nameAr": "شيشة",
-      "products": []
+      "products": [
+        {
+          "id": "p1784475251613",
+          "name": "",
+          "nameAr": "شيشة",
+          "description": "",
+          "descriptionAr": "",
+          "image": "",
+          "hasSizes": false,
+          "sizes": [],
+          "price": 20
+        }
+      ]
     }
   ],
   "facebookUrl": "https://www.facebook.com/share/1LeaU1K8pL/?mibextid=wwXIfr",
