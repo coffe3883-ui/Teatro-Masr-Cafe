@@ -615,8 +615,8 @@
           "id": "p1784375980339-48",
           "name": "Tiatro Mix",
           "nameAr": "تياترو ميكس",
-          "description": "",
-          "descriptionAr": "",
+          "description": "كيوى - مانجو - فراولة",
+          "descriptionAr": "كيوى - مانجو - فراولة",
           "image": "",
           "hasSizes": false,
           "sizes": [],
@@ -628,10 +628,10 @@
           "nameAr": "فلوريدا",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 85
+          "price": 80
         },
         {
           "id": "p1784375980339-50",
@@ -639,10 +639,10 @@
           "nameAr": "تياترو كوكتيل",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 90
+          "price": 100
         },
         {
           "id": "p1784375980339-51",
