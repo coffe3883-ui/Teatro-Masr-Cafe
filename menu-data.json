@@ -807,10 +807,10 @@
           "nameAr": "برتقال",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 50
+          "price": 65
         },
         {
           "id": "p1784376111691-67",
@@ -818,10 +818,10 @@
           "nameAr": "يوسفي",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 50
+          "price": 65
         },
         {
           "id": "p1784376111691-68",
@@ -829,10 +829,10 @@
           "nameAr": "بلح باللبن",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 55
+          "price": 90
         },
         {
           "id": "p1784376111691-69",
@@ -840,10 +840,10 @@
           "nameAr": "بطيخ",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 55
+          "price": 65
         },
         {
           "id": "p1784376111691-70",
@@ -851,10 +851,10 @@
           "nameAr": "موز",
           "description": "",
           "descriptionAr": "",
-          "image": null,
+          "image": "",
           "hasSizes": false,
           "sizes": [],
-          "price": 50
+          "price": 65
         },
         {
           "id": "p1784376111691-71",
@@ -862,10 +862,26 @@
           "nameAr": "كيوي",
           "description": "",
           "descriptionAr": "",
-          "image": null,
-          "hasSizes": false,
-          "sizes": [],
-          "price": 65
+          "image": "",
+          "hasSizes": true,
+          "sizes": [
+            {
+              "label": "بحليب",
+              "labelAr": "بحليب",
+              "price": 90
+            },
+            {
+              "label": "مكسرات",
+              "labelAr": "مكسرات",
+              "price": 100
+            },
+            {
+              "label": "اسبيشيال",
+              "labelAr": "اسبيشيال",
+              "price": 110
+            }
+          ],
+          "price": null
         },
         {
           "id": "p1784376111691-72",
