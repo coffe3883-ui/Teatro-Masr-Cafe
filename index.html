@@ -74,29 +74,6 @@
   input:focus, textarea:focus, select:focus { border-color: var(--red-bright); }
   input::placeholder, textarea::placeholder { color: #55534f; }
 
-  input[type="file"] {
-    width: 100%;
-    background: var(--card);
-    border: 1px dashed var(--hairline);
-    border-radius: 8px;
-    padding: 12px 14px;
-    color: var(--white-dim);
-    font-family: 'Tajawal', sans-serif;
-    font-size: 0.85rem;
-    margin-bottom: 4px;
-  }
-  input[type="file"]::file-selector-button {
-    background: var(--red);
-    color: var(--white);
-    border: none;
-    border-radius: 6px;
-    padding: 7px 14px;
-    margin-inline-end: 12px;
-    font-family: 'Tajawal', sans-serif;
-    font-size: 0.8rem;
-    cursor: pointer;
-  }
-
   .btn {
     display: inline-flex;
     align-items: center;
@@ -377,41 +354,9 @@
     transition: all 0.3s ease;
     z-index: 200;
     pointer-events: none;
-    max-width: min(90vw, 420px);
-    white-space: normal;
-    line-height: 1.6;
-    text-align: center;
-  }
-  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-  .toast.error { border-color: #e08888; background: #2a1414; }
-
-  .sync-error-banner {
-    display: none;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px;
-    background: #2a1414;
-    border: 1px solid var(--red-bright);
-    border-radius: 10px;
-    padding: 14px 18px;
-    margin-bottom: 16px;
-    font-size: 0.82rem;
-    color: #f0c8c8;
-    line-height: 1.7;
-  }
-  .sync-error-banner.show { display: flex; }
-  .sync-error-banner button {
-    flex-shrink: 0;
-    background: var(--red-bright);
-    color: var(--white);
-    border: none;
-    border-radius: 8px;
-    padding: 8px 16px;
-    font-size: 0.78rem;
-    font-family: 'Tajawal', sans-serif;
-    cursor: pointer;
     white-space: nowrap;
   }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 </style>
 </head>
 <body>
@@ -433,21 +378,16 @@
   <div class="admin-topbar">
     <div class="admin-brand">لوحة <span>تحكم</span> المنيو</div>
     <div class="admin-actions">
-      <span class="sync-pill off" id="syncPill" onclick="if(this.classList.contains('error')) saveToGitHub();">⚪ اربط GitHub أولاً</span>
+      <span class="sync-pill off" id="syncPill" onclick="if(this.classList.contains('error')) saveToGitHub(false);">⚪ اربط GitHub أولاً</span>
       <button class="btn btn-outline btn-sm" onclick="window.open('menu.html','_blank')">👁 معاينة المنيو</button>
       <button class="btn btn-danger btn-sm" onclick="logout()">خروج</button>
     </div>
   </div>
 
   <div class="admin-body">
-    <div class="sync-error-banner" id="syncErrorBanner">
-      <span id="syncErrorText"></span>
-      <button onclick="retryPublish()">🔄 حاول تاني</button>
-    </div>
-
     <div class="save-banner">
       <div class="save-banner-text">
-        أي تعديل (إضافة/تعديل/حذف صنف أو قسم، تغيير بيانات الكافيه) بيتنشر على GitHub <b>فوراً</b> عند الضغط على أي زرار حفظ — وهيبان لك في نفس اللحظة "تم النشر ✅" أو رسالة خطأ واضحة "❌" لو حصلت مشكلة.
+        أي تعديل (إضافة/تعديل/حذف صنف أو قسم، تغيير بيانات الكافيه) بيتنشر على GitHub <b>تلقائياً</b> بعد ثوانٍ من كل حفظ. تابع حالة النشر من المؤشر أعلى الصفحة.
       </div>
       <div style="display:flex; gap:8px; flex-wrap:wrap;">
         <button class="btn btn-solid btn-sm" id="ghPublishBtn" onclick="saveToGitHub()" style="white-space:nowrap">☁ نشر الآن يدوياً</button>
@@ -490,12 +430,21 @@
         </div>
         <button class="btn btn-sm" onclick="saveGhSettings()">حفظ إعدادات الربط</button>
         <div class="empty-hint" style="text-align:right; padding:10px 0 0;">
-          ⚠️ الـ Token بيتحفظ محلياً في هذا المتصفح فقط (localStorage) ومش بيتبعت لأي حد غيرنا. لما تدوس "حفظ إعدادات الربط" هنختبر الاتصال فوراً ونقولك لو فيه مشكلة في الـ Token أو الصلاحيات.
+          ⚠️ الـ Token بيتحفظ محلياً في هذا المتصفح فقط (localStorage) ومش بيتبعت لأي حد غيرنا. بعد الحفظ، أي تعديل هينشر تلقائياً — مش محتاج تعمل حاجة تانية.
         </div>
       </div>
     </div>
 
     <div class="field-group" style="margin-top:20px">
+      <label class="field-label">لوجو الكافيه (اختياري — لو مفيش، هتظهر أيقونة رمزية بدلاً منه)</label>
+      <div class="image-upload-zone" id="logoUploadZone" style="max-width:160px">
+        <span id="logoUploadLabel">اضغط لرفع اللوجو</span>
+        <input type="file" accept="image/*" id="logoInput" onchange="handleLogoUpload(event)">
+      </div>
+      <button class="btn btn-sm btn-outline" id="removeLogoBtn" onclick="removeLogo()" style="margin-top:8px; display:none">🗑️ حذف اللوجو</button>
+    </div>
+
+    <div class="field-group">
       <label class="field-label">اسم الكافيه (عربي)</label>
       <input type="text" id="cafeNameAr" placeholder="مثال: كافيه الأصالة">
     </div>
@@ -513,25 +462,11 @@
       <label class="field-label">رقم واتساب الكافيه (لاستقبال الطلبات)</label>
       <input type="text" id="cafeWhatsapp" placeholder="مثال: 201126023106 (بالصيغة الدولية بدون +)">
     </div>
-    <button class="btn btn-sm" onclick="saveHeaderInfo()">حفظ بيانات الكافيه</button>
-
-    <div class="cat-block" id="csvImportBlock">
-      <div class="cat-block-head" onclick="toggleCatCollapse(this)">
-        <div class="cat-block-head-title">
-          <span class="caret">▾</span>
-          <b>📥 استيراد أصناف من ملف CSV</b>
-        </div>
-      </div>
-      <div class="cat-block-body">
-        <div class="empty-hint" style="text-align:right; line-height:2; margin-bottom:12px;">
-          لاستيراد عدد كبير من الأصناف مرة واحدة بدل إضافتهم واحد واحد. أعمدة الملف بالترتيب:
-          <br><code>category_ar, category_en, product_ar, product_en, description, price</code>
-          <br>لو القسم موجود بالفعل (نفس الاسم العربي بالظبط)، الأصناف هتتضاف له. لو مش موجود، هيتعمل قسم جديد.
-        </div>
-        <input type="file" id="csvFileInput" accept=".csv">
-        <div id="csvPreviewArea"></div>
-      </div>
+    <div class="field-group">
+      <label class="field-label">رابط صفحة الفيسبوك (اختياري)</label>
+      <input type="text" id="cafeFacebook" placeholder="مثال: https://www.facebook.com/yourpage">
     </div>
+    <button class="btn btn-sm" onclick="saveHeaderInfo()">حفظ بيانات الكافيه</button>
 
     <div class="section-head"><h2>الأقسام والمنتجات</h2></div>
 
@@ -636,9 +571,22 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// لو النت قطع وقت النشر، أول ما يرجع نحاول ننشر تلقائيًا بدل ما ننتظر ضغطة يدوية
+window.addEventListener('online', () => {
+  const pill = document.getElementById('syncPill');
+  if (pill && pill.classList.contains('error')) {
+    showToast('📡 رجع النت — جاري إعادة محاولة النشر...');
+    saveToGitHub(true);
+  }
+});
+
 /* =========================================================
-   الربط المباشر مع GitHub (Contents API) — نشر فوري بعد كل تعديل
+   الربط المباشر مع GitHub (Contents API) — نشر تلقائي بعد كل تعديل
    ========================================================= */
+let ghAutoSaveTimer = null;
+let isPublishing = false;
+let pendingRepublish = false;
+
 function loadGhSettings() {
   const saved = JSON.parse(localStorage.getItem('ghSettings') || '{}');
   document.getElementById('ghOwner').value = saved.owner || 'coffe3883-ui';
@@ -647,12 +595,15 @@ function loadGhSettings() {
   document.getElementById('ghPath').value = saved.path || 'menu-data.json';
   document.getElementById('ghToken').value = saved.token || '';
   updateGhStatusLabel(!!saved.token);
-  setSyncPill(saved.token ? 'ok' : 'off', saved.token ? '🟢 متصل' : '⚪ اربط GitHub أولاً');
+  setSyncPill(saved.token ? 'ok' : 'off', saved.token ? '🟢 متصل — هينشر عند أول تعديل' : '⚪ اربط GitHub أولاً');
+
+  // لو الربط متظبط ومتصل بالفعل، نطوي القسم تلقائياً — مش محتاج نشوف التفاصيل دي كل مرة
+  if (saved.token) {
+    document.getElementById('ghSettingsBlock').classList.add('collapsed');
+  }
 }
 
-// بيحفظ الإعدادات وبعدين بيختبرها فوراً بمحاولة نشر حقيقية —
-// عشان لو التوكن غلط أو الصلاحية ناقصة، تعرف من ثانيتها مش تكتشف بعدين
-async function saveGhSettings() {
+function saveGhSettings() {
   const settings = {
     owner: document.getElementById('ghOwner').value.trim(),
     repo: document.getElementById('ghRepo').value.trim(),
@@ -661,20 +612,13 @@ async function saveGhSettings() {
     token: document.getElementById('ghToken').value.trim()
   };
   if (!settings.owner || !settings.repo || !settings.token) {
-    showToast('من فضلك املأ اسم الحساب والمستودع والـ Token', true);
+    showToast('من فضلك املأ اسم الحساب والمستودع والـ Token');
     return;
   }
   localStorage.setItem('ghSettings', JSON.stringify(settings));
   updateGhStatusLabel(true);
-  showToast('⏳ جاري اختبار الاتصال بـ GitHub...');
-
-  const ok = await publishToGitHub();
-  if (ok) {
-    showToast('✅ الاتصال شغال والإعدادات محفوظة — أي تعديل هينشر فوراً');
-  } else {
-    updateGhStatusLabel(false);
-    showToast('❌ الإعدادات محفوظة محلياً بس فشل الاتصال — شوف رسالة الخطأ أعلى الصفحة', true);
-  }
+  setSyncPill('ok', '🟢 متصل — هينشر عند أول تعديل');
+  showToast('تم حفظ إعدادات الربط مع GitHub');
 }
 
 function updateGhStatusLabel(connected) {
@@ -699,40 +643,59 @@ function utf8ToBase64(str) {
   return btoa(unescape(encodeURIComponent(str)));
 }
 
-function showFailureBanner(message) {
-  document.getElementById('syncErrorText').textContent =
-    '⚠️ آخر تعديل اتحفظ في المتصفح، لكن فشل نشره على GitHub: ' + message;
-  document.getElementById('syncErrorBanner').classList.add('show');
-}
-function clearFailureBanner() {
-  document.getElementById('syncErrorBanner').classList.remove('show');
-}
-function retryPublish() {
-  publishToGitHub();
-}
-
-// طابور نشر واحد — أي نداء بينضم له وبينتظر دوره، فمفيش طلبين
-// بيتعاركوا على نفس الملف في نفس الوقت (تعارض SHA)
-let publishChain = Promise.resolve();
-
-// كل تعديل (إضافة/حذف/حفظ) بينادي الدالة دي مباشرة وبينتظر نتيجتها —
-// من غير أي تأجيل بالوقت، عشان لو المستخدم قفل التاب أو غيّر الصفحة
-// بسرعة، النشر يكون خلص فعلاً أو الخطأ يبان فوراً، مش يضيع في الصمت
-function publishToGitHub() {
-  const attempt = publishChain.then(() => doPublish());
-  publishChain = attempt.catch(() => {}); // الطابور يكمل حتى لو نداء فشل
-  return attempt; // بترجع true لو نجح، false لو فشل
-}
-
-async function doPublish() {
+// بيتنادى تلقائياً من persist() بعد أي تعديل — بيأجّل النشر ثانيتين
+// عشان لو حصلت تعديلات متتالية سريعة، يبعتها دفعة واحدة مش نداء لكل حرف
+function scheduleAutoPublish() {
   if (!hasGhConfig()) {
     setSyncPill('off', '⚪ اربط GitHub أولاً');
-    return false;
+    return;
   }
+  setSyncPill('pending', '🟡 هيتم الحفظ خلال ثوانٍ...');
+  clearTimeout(ghAutoSaveTimer);
+  ghAutoSaveTimer = setTimeout(() => saveToGitHub(true), 1800);
+}
+
+async function saveToGitHub(silent) {
+  if (!hasGhConfig()) {
+    if (!silent) showToast('اضبط إعدادات الربط مع GitHub أولاً (تحت زرار النشر)');
+    setSyncPill('off', '⚪ اربط GitHub أولاً');
+    return;
+  }
+
+  // خط دفاع أخير: مستحيل ننشر بيانات فاضية أو تالفة فوق الملف المنشور،
+  // حتى لو حصل خطأ في مكان تاني في الكود قبل الوصول هنا
+  if (!isValidMenuData(menuData)) {
+    console.error('تم منع النشر: menuData غير صالحة (null أو بدون categories)');
+    if (!silent) showToast('❌ تم إيقاف النشر: البيانات الحالية غير صالحة (لحماية المنيو المنشور)');
+    setSyncPill('error', '🔴 تم إيقاف نشر بيانات غير صالحة');
+    return;
+  }
+
+  // فحص صريح للاتصال بالإنترنت قبل أي محاولة، عشان الرسالة تبقى واضحة ومفهومة
+  // بدل رسالة تقنية غامضة زي "Failed to fetch"
+  if (!navigator.onLine) {
+    console.warn('تم إيقاف النشر: لا يوجد اتصال بالإنترنت');
+    if (!silent) showToast('📡 مفيش اتصال بالإنترنت حالياً — التعديل محفوظ عندك وهيتنشر أول ما النت يرجع');
+    setSyncPill('error', '🔴 مفيش إنترنت — دوس هنا لما يرجع النت');
+    return;
+  }
+
+  // لو فيه نشر شغال حالياً، سجّل إن فيه تعديل جديد وسيبه يتنشر تاني أول ما يخلص
+  // (بيمنع تعارض الـ SHA بين طلبين بيحصلوا في نفس الوقت)
+  if (isPublishing) {
+    pendingRepublish = true;
+    return;
+  }
+
+  clearTimeout(ghAutoSaveTimer);
+  isPublishing = true;
 
   const settings = JSON.parse(localStorage.getItem('ghSettings') || '{}');
   const path = settings.path || 'menu-data.json';
   const apiUrl = `https://api.github.com/repos/${settings.owner}/${settings.repo}/contents/${path}`;
+  const btn = document.getElementById('ghPublishBtn');
+  const originalText = btn.textContent;
+  if (!silent) { btn.disabled = true; btn.textContent = '⏳ جاري النشر...'; }
   setSyncPill('pending', '🟡 جاري النشر على GitHub...');
 
   try {
@@ -747,8 +710,6 @@ async function doPublish() {
     if (getRes.ok) {
       const getData = await getRes.json();
       sha = getData.sha;
-    } else if (getRes.status === 401 || getRes.status === 403) {
-      throw new Error('الـ Token غير صالح أو مفيهوش صلاحية الكتابة على المستودع ده — اعمل توكن جديد من GitHub واضبطه هنا');
     } else if (getRes.status !== 404) {
       const errData = await getRes.json().catch(() => ({}));
       throw new Error(errData.message || `فشل قراءة الملف الحالي (${getRes.status})`);
@@ -773,58 +734,92 @@ async function doPublish() {
     });
 
     if (!putRes.ok) {
-      if (putRes.status === 401 || putRes.status === 403) {
-        throw new Error('الـ Token غير صالح أو مفيهوش صلاحية الكتابة على المستودع ده — اعمل توكن جديد من GitHub واضبطه هنا');
-      }
       const errData = await putRes.json().catch(() => ({}));
       throw new Error(errData.message || `فشل النشر (${putRes.status})`);
     }
 
     const timeStr = new Date().toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
     setSyncPill('ok', `🟢 محفوظ على GitHub · ${timeStr}`);
-    clearFailureBanner();
-    return true;
+    if (!silent) showToast('✅ تم النشر على GitHub — التحديث هيظهر للعملاء خلال دقيقة');
   } catch (err) {
     console.error(err);
     setSyncPill('error', '🔴 فشل آخر حفظ — دوس هنا للمحاولة تاني');
-    showFailureBanner(err.message);
-    return false;
-  }
-}
-
-async function saveToGitHub() {
-  const btn = document.getElementById('ghPublishBtn');
-  const originalText = btn.textContent;
-  btn.disabled = true;
-  btn.textContent = '⏳ جاري النشر...';
-  const ok = await publishToGitHub();
-  btn.disabled = false;
-  btn.textContent = originalText;
-  if (!hasGhConfig()) {
-    showToast('اضبط إعدادات الربط مع GitHub أولاً (تحت زرار النشر)', true);
-  } else {
-    showToast(ok ? '✅ تم النشر على GitHub — التحديث هيظهر للعملاء خلال دقيقة' : '❌ فشل النشر — شوف رسالة الخطأ أعلى الصفحة', !ok);
+    if (!silent) showToast('❌ فشل النشر: ' + err.message);
+  } finally {
+    if (!silent) { btn.disabled = false; btn.textContent = originalText; }
+    isPublishing = false;
+    if (pendingRepublish) {
+      pendingRepublish = false;
+      saveToGitHub(true);
+    }
   }
 }
 
 async function loadData() {
   const cached = localStorage.getItem('menuDataDraft');
   if (cached) {
-    menuData = JSON.parse(cached);
-    showToast('تم استرجاع آخر تعديل محفوظ مؤقتاً');
-  } else {
-    const res = await fetch('menu-data.json?t=' + Date.now());
-    menuData = await res.json();
+    try {
+      const parsed = JSON.parse(cached);
+      if (isValidMenuData(parsed)) {
+        menuData = parsed;
+        showToast('تم استرجاع آخر تعديل محفوظ مؤقتاً');
+      } else {
+        console.warn('مسودة localStorage تالفة، هنقرأ من GitHub بدلها');
+        menuData = null;
+      }
+    } catch (e) {
+      console.warn('فشل قراءة مسودة localStorage:', e);
+      menuData = null;
+    }
   }
+
+  if (!menuData) {
+    try {
+      const res = await fetch('menu-data.json?t=' + Date.now(), { cache: 'no-store' });
+      const fetched = await res.json();
+      if (isValidMenuData(fetched)) {
+        menuData = fetched;
+      } else {
+        console.error('menu-data.json فاضي أو تالف (null/بدون categories) — هنبدأ ببيانات فاضية آمنة بدل ما نكمل بحاجة تالفة');
+        showToast('⚠️ ملف المنيو الحالي فاضي أو تالف — بدأنا بقالب فاضي. راجع البيانات قبل النشر');
+        menuData = emptyMenuTemplate();
+      }
+    } catch (e) {
+      console.error('فشل تحميل menu-data.json:', e);
+      showToast('⚠️ تعذر تحميل المنيو الحالي — بدأنا بقالب فاضي. راجع البيانات قبل النشر');
+      menuData = emptyMenuTemplate();
+    }
+  }
+
   renderAll();
 }
 
-// بيحفظ محلياً فوراً، وبعدين بينشر على GitHub وبينتظر النتيجة —
-// كل دالة حفظ (حفظ بيانات الكافيه، إضافة قسم، حفظ منتج...) بتنادي
-// الدالة دي وبتستنى نتيجتها عشان تعرف تقول للمستخدم نجح ولا فشل فعلاً
-async function persist() {
+// يتأكد إن الكائن شكله فعلاً بيانات منيو سليمة، مش null ولا كائن ناقص
+function isValidMenuData(obj) {
+  return !!obj && typeof obj === 'object' && Array.isArray(obj.categories);
+}
+
+function emptyMenuTemplate() {
+  return {
+    cafeName: '',
+    cafeNameAr: '',
+    tagline: '',
+    taglineAr: '',
+    whatsappNumber: '',
+    facebookUrl: '',
+    logo: '',
+    categories: []
+  };
+}
+
+function persist() {
+  if (!isValidMenuData(menuData)) {
+    console.error('محاولة حفظ بيانات غير صالحة — تم الإيقاف لحماية الملف المنشور');
+    showToast('⚠️ خطأ داخلي: البيانات غير صالحة، لم يتم الحفظ');
+    return;
+  }
   localStorage.setItem('menuDataDraft', JSON.stringify(menuData));
-  return await publishToGitHub();
+  scheduleAutoPublish();
 }
 
 function renderAll() {
@@ -832,18 +827,65 @@ function renderAll() {
   document.getElementById('cafeName').value = menuData.cafeName || '';
   document.getElementById('taglineAr').value = menuData.taglineAr || '';
   document.getElementById('cafeWhatsapp').value = menuData.whatsappNumber || '';
+  document.getElementById('cafeFacebook').value = menuData.facebookUrl || '';
+  renderLogoZone();
   renderCategories();
 }
 
-async function saveHeaderInfo() {
+function renderLogoZone() {
+  const zone = document.getElementById('logoUploadZone');
+  const label = document.getElementById('logoUploadLabel');
+  const removeBtn = document.getElementById('removeLogoBtn');
+  if (menuData.logo) {
+    zone.style.backgroundImage = `url('${menuData.logo}')`;
+    zone.classList.add('has-image');
+    label.textContent = 'تغيير اللوجو';
+    removeBtn.style.display = 'inline-flex';
+  } else {
+    zone.style.backgroundImage = '';
+    zone.classList.remove('has-image');
+    label.textContent = 'اضغط لرفع اللوجو';
+    removeBtn.style.display = 'none';
+  }
+}
+
+function handleLogoUpload(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    menuData.logo = e.target.result;
+    renderLogoZone();
+    persist();
+    showToast('تم رفع اللوجو');
+  };
+  reader.readAsDataURL(file);
+}
+
+function removeLogo() {
+  if (!confirm('هل تريد حذف اللوجو؟ ستظهر الأيقونة الرمزية بدلاً منه')) return;
+  menuData.logo = '';
+  renderLogoZone();
+  persist();
+  showToast('تم حذف اللوجو');
+}
+
+function saveHeaderInfo() {
   menuData.cafeNameAr = document.getElementById('cafeNameAr').value;
   menuData.cafeName = document.getElementById('cafeName').value;
   menuData.taglineAr = document.getElementById('taglineAr').value;
   menuData.tagline = document.getElementById('taglineAr').value;
   menuData.whatsappNumber = document.getElementById('cafeWhatsapp').value.trim();
-  showToast('⏳ جاري الحفظ...');
-  const ok = await persist();
-  showToast(ok ? '✅ تم حفظ بيانات الكافيه على GitHub' : '❌ فشل نشر بيانات الكافيه — شوف رسالة الخطأ أعلى الصفحة', !ok);
+
+  const fbInput = document.getElementById('cafeFacebook').value.trim();
+  if (fbInput && !fbInput.startsWith('http')) {
+    showToast('⚠️ رابط الفيسبوك لازم يبدأ بـ https:// — لم يتم حفظه');
+  } else {
+    menuData.facebookUrl = fbInput;
+  }
+
+  persist();
+  showToast('تم حفظ بيانات الكافيه');
 }
 
 function renderCategories() {
@@ -907,162 +949,7 @@ function renderCategories() {
 
 function toggleCatCollapse(headEl) { headEl.parentElement.classList.toggle('collapsed'); }
 
-/* =========================================================
-   استيراد أصناف من CSV — لعدد كبير من الأصناف مرة واحدة
-   ========================================================= */
-let pendingCsvImport = null;
-let csvImportCounter = 0;
-
-function parseCSVText(text) {
-  text = text.replace(/^\uFEFF/, ''); // شيل BOM لو موجود (بيحصل مع ملفات إكسل)
-  const rows = [];
-  const lines = text.split(/\r\n|\n|\r/).filter(l => l.trim().length > 0);
-  for (const line of lines) {
-    const cells = [];
-    let cur = '';
-    let inQuotes = false;
-    for (let i = 0; i < line.length; i++) {
-      const ch = line[i];
-      if (ch === '"') {
-        if (inQuotes && line[i + 1] === '"') { cur += '"'; i++; }
-        else inQuotes = !inQuotes;
-      } else if (ch === ',' && !inQuotes) {
-        cells.push(cur); cur = '';
-      } else {
-        cur += ch;
-      }
-    }
-    cells.push(cur);
-    rows.push(cells.map(c => c.trim()));
-  }
-  return rows;
-}
-
-function handleCsvSelect(event) {
-  const file = event.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = e => {
-    try {
-      const rows = parseCSVText(e.target.result);
-      if (rows.length < 2) { showToast('الملف فاضي أو مفيهوش صفوف بيانات', true); return; }
-
-      const header = rows[0].map(h => h.toLowerCase().trim());
-      const idx = {
-        categoryAr: header.indexOf('category_ar'),
-        categoryEn: header.indexOf('category_en'),
-        productAr: header.indexOf('product_ar'),
-        productEn: header.indexOf('product_en'),
-        description: header.indexOf('description'),
-        price: header.indexOf('price')
-      };
-      if (idx.categoryAr === -1 || idx.productAr === -1 || idx.price === -1) {
-        showToast('الملف لازم يحتوي أعمدة category_ar و product_ar و price على الأقل', true);
-        return;
-      }
-
-      const plan = {}; // اسم القسم بالعربي -> { categoryEn, products: [] }
-      let skippedRows = 0;
-      for (let r = 1; r < rows.length; r++) {
-        const row = rows[r];
-        const catAr = (row[idx.categoryAr] || '').trim();
-        const prodAr = (row[idx.productAr] || '').trim();
-        const price = parseFloat((row[idx.price] || '').trim());
-        if (!catAr || !prodAr || isNaN(price)) { skippedRows++; continue; }
-        if (!plan[catAr]) plan[catAr] = { categoryEn: idx.categoryEn > -1 ? (row[idx.categoryEn] || '').trim() : '', products: [] };
-        plan[catAr].products.push({
-          nameAr: prodAr,
-          name: idx.productEn > -1 ? (row[idx.productEn] || '').trim() : '',
-          description: idx.description > -1 ? (row[idx.description] || '').trim() : '',
-          price
-        });
-      }
-
-      pendingCsvImport = plan;
-      renderCsvPreview(plan, skippedRows);
-    } catch (err) {
-      console.error(err);
-      showToast('تعذّرت قراءة الملف — تأكد إنه CSV سليم بترميز UTF-8', true);
-    }
-  };
-  reader.readAsText(file, 'UTF-8');
-}
-
-function renderCsvPreview(plan, skippedRows) {
-  const catNames = Object.keys(plan);
-  const totalProducts = catNames.reduce((s, c) => s + plan[c].products.length, 0);
-  const existingNames = new Set((menuData.categories || []).map(c => (c.nameAr || '').trim()));
-  const newCatsCount = catNames.filter(c => !existingNames.has(c)).length;
-
-  let html = `<div class="empty-hint" style="text-align:right; line-height:2;">
-    هيتم إضافة <b>${totalProducts}</b> صنف في <b>${catNames.length}</b> قسم
-    (${newCatsCount} قسم جديد${catNames.length - newCatsCount ? '، ' + (catNames.length - newCatsCount) + ' قسم موجود هيتضاف له الأصناف' : ''}).
-    ${skippedRows ? `<br>⚠️ اتجاهل ${skippedRows} صف فيه بيانات ناقصة أو سعر مش رقم صحيح.` : ''}
-  </div>`;
-  html += '<ul style="margin:10px 0; padding-right:18px; font-size:0.82rem; line-height:2; color:var(--white-dim)">';
-  catNames.forEach(c => {
-    html += `<li>${c}${existingNames.has(c) ? ' (قسم موجود)' : ' (قسم جديد)'} — ${plan[c].products.length} صنف</li>`;
-  });
-  html += '</ul>';
-  html += '<button class="btn btn-solid btn-sm" onclick="confirmCsvImport()">✅ تأكيد الاستيراد</button> ';
-  html += '<button class="btn btn-outline btn-sm" onclick="cancelCsvImport()">إلغاء</button>';
-  document.getElementById('csvPreviewArea').innerHTML = html;
-}
-
-function cancelCsvImport() {
-  pendingCsvImport = null;
-  document.getElementById('csvPreviewArea').innerHTML = '';
-  document.getElementById('csvFileInput').value = '';
-}
-
-async function confirmCsvImport() {
-  if (!pendingCsvImport) return;
-  if (!menuData.categories) menuData.categories = [];
-
-  let addedCount = 0;
-  let skippedDup = 0;
-
-  Object.keys(pendingCsvImport).forEach(catAr => {
-    let cat = menuData.categories.find(c => (c.nameAr || '').trim() === catAr);
-    if (!cat) {
-      cat = { id: 'cat-' + Date.now() + '-' + (csvImportCounter++), name: pendingCsvImport[catAr].categoryEn, nameAr: catAr, products: [] };
-      menuData.categories.push(cat);
-    }
-    if (!cat.products) cat.products = [];
-    const existingProductNames = new Set(cat.products.map(p => (p.nameAr || '').trim()));
-
-    pendingCsvImport[catAr].products.forEach(prod => {
-      if (existingProductNames.has(prod.nameAr)) { skippedDup++; return; }
-      cat.products.push({
-        id: 'p' + Date.now() + '-' + (csvImportCounter++),
-        name: prod.name,
-        nameAr: prod.nameAr,
-        description: prod.description,
-        descriptionAr: prod.description,
-        image: null,
-        hasSizes: false,
-        sizes: [],
-        price: prod.price
-      });
-      existingProductNames.add(prod.nameAr);
-      addedCount++;
-    });
-  });
-
-  pendingCsvImport = null;
-  document.getElementById('csvPreviewArea').innerHTML = '';
-  document.getElementById('csvFileInput').value = '';
-  renderCategories();
-  showToast(`⏳ جاري استيراد ${addedCount} صنف...`);
-  const ok = await persist();
-  showToast(ok
-    ? `✅ تم استيراد ${addedCount} صنف ونشره على GitHub${skippedDup ? ' (اتجاهل ' + skippedDup + ' صنف مكرر بنفس الاسم)' : ''}`
-    : '❌ اتضافوا محلياً بس فشل النشر — شوف رسالة الخطأ أعلى الصفحة', !ok);
-}
-
-document.getElementById('csvFileInput').addEventListener('change', handleCsvSelect);
-
-async function addCategory() {
+function addCategory() {
   const nameAr = document.getElementById('newCatNameAr').value.trim();
   const name = document.getElementById('newCatName').value.trim();
   if (!nameAr) { showToast('اكتب اسم القسم أولاً'); return; }
@@ -1070,29 +957,26 @@ async function addCategory() {
   menuData.categories.push({ id, name, nameAr, products: [] });
   document.getElementById('newCatNameAr').value = '';
   document.getElementById('newCatName').value = '';
+  persist();
   renderCategories();
-  showToast('⏳ جاري إضافة القسم...');
-  const ok = await persist();
-  showToast(ok ? '✅ تم إضافة القسم ونشره' : '❌ اتضاف محلياً بس فشل النشر — شوف رسالة الخطأ أعلى الصفحة', !ok);
+  showToast('تم إضافة القسم');
 }
 
-async function deleteCategory(catId) {
+function deleteCategory(catId) {
   if (!confirm('هل تريد حذف هذا القسم وكل منتجاته؟')) return;
   menuData.categories = menuData.categories.filter(c => c.id !== catId);
+  persist();
   renderCategories();
-  showToast('⏳ جاري حذف القسم...');
-  const ok = await persist();
-  showToast(ok ? '✅ تم حذف القسم ونشره' : '❌ اتحذف محلياً بس فشل النشر — شوف رسالة الخطأ أعلى الصفحة', !ok);
+  showToast('تم حذف القسم');
 }
 
-async function deleteProduct(catId, prodId) {
+function deleteProduct(catId, prodId) {
   if (!confirm('هل تريد حذف هذا المنتج؟')) return;
   const cat = menuData.categories.find(c => c.id === catId);
   cat.products = cat.products.filter(p => p.id !== prodId);
+  persist();
   renderCategories();
-  showToast('⏳ جاري حذف المنتج...');
-  const ok = await persist();
-  showToast(ok ? '✅ تم حذف المنتج ونشره' : '❌ اتحذف محلياً بس فشل النشر — شوف رسالة الخطأ أعلى الصفحة', !ok);
+  showToast('تم حذف المنتج');
 }
 
 function openAddProduct(catId) {
@@ -1216,7 +1100,7 @@ async function handleImageUpload(event) {
   }
 }
 
-async function saveProduct() {
+function saveProduct() {
   const nameAr = document.getElementById('prodNameAr').value.trim();
   if (!nameAr) { showToast('اكتب اسم المنتج أولاً'); return; }
 
@@ -1257,11 +1141,10 @@ async function saveProduct() {
     cat.products.push(productObj);
   }
 
+  persist();
   renderCategories();
   closeModal();
-  showToast('⏳ جاري حفظ المنتج...');
-  const ok = await persist();
-  showToast(ok ? '✅ تم حفظ المنتج ونشره على GitHub' : '❌ اتحفظ محلياً بس فشل النشر — شوف رسالة الخطأ أعلى الصفحة', !ok);
+  showToast('تم حفظ المنتج');
 }
 
 function downloadData() {
@@ -1275,13 +1158,11 @@ function downloadData() {
   showToast('تم تنزيل الملف — ارفعه على GitHub الآن');
 }
 
-function showToast(msg, isError) {
+function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg;
-  t.classList.toggle('error', !!isError);
   t.classList.add('show');
-  clearTimeout(t._hideTimer);
-  t._hideTimer = setTimeout(() => t.classList.remove('show'), isError ? 5000 : 2600);
+  setTimeout(() => t.classList.remove('show'), 2600);
 }
 </script>
 </body>

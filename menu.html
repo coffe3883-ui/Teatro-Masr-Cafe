@@ -284,6 +284,30 @@
     letter-spacing: 1px;
   }
 
+  .social-row {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .social-icon-link {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid var(--hairline);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-dim);
+    transition: all 0.2s ease;
+  }
+  .social-icon-link:hover, .social-icon-link:active {
+    border-color: var(--red-bright);
+    color: var(--red-bright);
+    background: rgba(196,30,30,0.08);
+  }
+  .social-icon-link svg { width: 18px; height: 18px; }
+
   @media (max-width: 400px) {
     .cafe-name-ar { font-size: 1.8rem; }
     .product-thumb { width: 58px; height: 58px; }
@@ -313,10 +337,39 @@
 
 <footer class="menu-footer">
   <div class="ornament">▪ ▪ ▪</div>
+  <div class="social-row" id="socialRow"></div>
   صُنع بعناية لكل ضيف
 </footer>
 
 <script>
+// يبني أيقونات فيسبوك وواتساب في الفوتر، ويعرض فقط الأيقونة اللي بياناتها موجودة فعلياً
+function renderSocialIcons(data) {
+  const row = document.getElementById('socialRow');
+  row.innerHTML = '';
+
+  if (data.facebookUrl) {
+    const fbLink = document.createElement('a');
+    fbLink.href = data.facebookUrl;
+    fbLink.target = '_blank';
+    fbLink.rel = 'noopener noreferrer';
+    fbLink.className = 'social-icon-link';
+    fbLink.setAttribute('aria-label', 'صفحة الفيسبوك');
+    fbLink.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.13 8.44 9.94v-7.03H7.9v-2.91h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.81 8.44-4.94 8.44-9.94z"/></svg>`;
+    row.appendChild(fbLink);
+  }
+
+  if (data.whatsappNumber) {
+    const waLink = document.createElement('a');
+    waLink.href = `https://wa.me/${data.whatsappNumber}`;
+    waLink.target = '_blank';
+    waLink.rel = 'noopener noreferrer';
+    waLink.className = 'social-icon-link';
+    waLink.setAttribute('aria-label', 'واتساب الكافيه');
+    waLink.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.94.56 3.75 1.51 5.29L2 22l4.98-1.61a9.9 9.9 0 004.06.87h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.83 13.99c-.24.68-1.42 1.3-1.95 1.36-.53.06-1.03.27-3.48-.73-2.94-1.2-4.82-4.19-4.97-4.39-.15-.2-1.19-1.58-1.19-3.01 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.2 0 .39.002.56.01.18.008.42-.07.65.5.24.58.81 2 .89 2.15.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.26 1.63 2.04 1.12.99 2.07 1.3 2.36 1.44.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.65.78 1.94.92.29.14.48.21.55.33.07.12.07.68-.17 1.36z"/></svg>`;
+    row.appendChild(waLink);
+  }
+}
+
 async function loadMenu() {
   let data;
   try {
@@ -344,6 +397,8 @@ async function loadMenu() {
   if (data.logo) {
     crestContainer.innerHTML = `<img src="${data.logo}" alt="لوجو الكافيه" style="width:100%; height:100%; object-fit:contain; border-radius:8px;">`;
   }
+
+  renderSocialIcons(data);
 
   const nav = document.getElementById('catNav');
   const content = document.getElementById('menuContent');
