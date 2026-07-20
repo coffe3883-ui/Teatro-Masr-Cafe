@@ -345,7 +345,19 @@
       "id": "cat-cold",
       "name": "Cold Drinks",
       "nameAr": "مشروبات باردة",
-      "products": []
+      "products": [
+        {
+          "id": "p1784574555643",
+          "name": "",
+          "nameAr": "ايس لاتيه",
+          "description": "",
+          "descriptionAr": "",
+          "image": "",
+          "hasSizes": false,
+          "sizes": [],
+          "price": 70
+        }
+      ]
     },
     {
       "id": "cat-1784375980339-25",
