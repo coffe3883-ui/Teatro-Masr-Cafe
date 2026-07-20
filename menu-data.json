@@ -345,30 +345,7 @@
       "id": "cat-cold",
       "name": "Cold Drinks",
       "nameAr": "مشروبات باردة",
-      "products": [
-        {
-          "id": "p4",
-          "name": "Iced Latte",
-          "nameAr": "آيس لاتيه",
-          "description": "Chilled espresso with cold milk",
-          "descriptionAr": "إسبريسو مثلج مع حليب بارد",
-          "image": "",
-          "hasSizes": true,
-          "sizes": [
-            {
-              "label": "Medium",
-              "labelAr": "وسط",
-              "price": 60
-            },
-            {
-              "label": "Large",
-              "labelAr": "كبير",
-              "price": 72
-            }
-          ],
-          "price": null
-        }
-      ]
+      "products": []
     },
     {
       "id": "cat-1784375980339-25",
@@ -941,6 +918,39 @@
             }
           ],
           "price": null
+        },
+        {
+          "id": "p1784574131189",
+          "name": "",
+          "nameAr": "جوافه نعناع",
+          "description": "",
+          "descriptionAr": "",
+          "image": "",
+          "hasSizes": false,
+          "sizes": [],
+          "price": 75
+        },
+        {
+          "id": "p1784574155108",
+          "name": "",
+          "nameAr": "موز اكسترا",
+          "description": "",
+          "descriptionAr": "",
+          "image": "",
+          "hasSizes": false,
+          "sizes": [],
+          "price": 70
+        },
+        {
+          "id": "p1784574175340",
+          "name": "",
+          "nameAr": "زبادى ساده",
+          "description": "",
+          "descriptionAr": "",
+          "image": "",
+          "hasSizes": false,
+          "sizes": [],
+          "price": 55
         }
       ]
     },
