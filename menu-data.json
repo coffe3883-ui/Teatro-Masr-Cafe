@@ -356,6 +356,17 @@
           "hasSizes": false,
           "sizes": [],
           "price": 70
+        },
+        {
+          "id": "p1784574700249",
+          "name": "",
+          "nameAr": "ايس موكا",
+          "description": "",
+          "descriptionAr": "",
+          "image": "",
+          "hasSizes": false,
+          "sizes": [],
+          "price": 75
         }
       ]
     },
