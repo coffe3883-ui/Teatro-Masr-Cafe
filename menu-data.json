@@ -533,17 +533,6 @@
           "price": 40
         },
         {
-          "id": "p1784375980339-42",
-          "name": "",
-          "nameAr": "فيروز / بيريل",
-          "description": "",
-          "descriptionAr": "",
-          "image": null,
-          "hasSizes": false,
-          "sizes": [],
-          "price": 40
-        },
-        {
           "id": "p1784375980339-43",
           "name": "",
           "nameAr": "شويبس",
@@ -586,6 +575,17 @@
           "hasSizes": false,
           "sizes": [],
           "price": 35
+        },
+        {
+          "id": "p1784574602457",
+          "name": "",
+          "nameAr": "فيروز /بيريل",
+          "description": "",
+          "descriptionAr": "",
+          "image": "",
+          "hasSizes": false,
+          "sizes": [],
+          "price": 45
         }
       ]
     },
