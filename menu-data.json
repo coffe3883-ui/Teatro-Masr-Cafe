@@ -327,6 +327,17 @@
             }
           ],
           "price": null
+        },
+        {
+          "id": "p1784575391558",
+          "name": "",
+          "nameAr": "هووت سيدر",
+          "description": "",
+          "descriptionAr": "",
+          "image": "",
+          "hasSizes": false,
+          "sizes": [],
+          "price": 60
         }
       ]
     },
